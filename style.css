@@ -1,4 +1,5 @@
-/* Google Fonts */
+/* ---------- Fonts ---------- */
+
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap");
 
 /* ---------- Global Styles ---------- */
@@ -11,9 +12,7 @@
     --gold: #d7b66f;
     --light-gold: #f1dda8;
     --cream: #f8f2e7;
-    --white: #ffffff;
     --soft-white: rgba(255, 255, 255, 0.82);
-    --glass: rgba(24, 15, 48, 0.72);
     --shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
 }
 
@@ -32,7 +31,6 @@ body {
     color: var(--cream);
     font-family: "Montserrat", sans-serif;
     line-height: 1.7;
-    overflow-x: hidden;
 }
 
 h1,
@@ -50,6 +48,12 @@ a {
 button,
 a {
     -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--light-gold);
+    outline-offset: 5px;
 }
 
 section {
@@ -118,12 +122,12 @@ section {
 }
 
 .nav-links a:hover,
-.nav-links a:focus {
+.nav-links a:focus-visible {
     color: var(--light-gold);
 }
 
 .nav-links a:hover::after,
-.nav-links a:focus::after {
+.nav-links a:focus-visible::after {
     width: 100%;
 }
 
@@ -136,7 +140,7 @@ section {
     font-size: 1.8rem;
 }
 
-/* ---------- Hero Section ---------- */
+/* ---------- Hero ---------- */
 
 .hero {
     position: relative;
@@ -215,7 +219,6 @@ section {
 
 .hero h1 {
     margin-bottom: 1.5rem;
-    color: var(--cream);
     font-size: clamp(3.2rem, 7.5vw, 6.5rem);
     font-weight: 500;
     line-height: 0.98;
@@ -250,6 +253,7 @@ section {
     font-size: 0.78rem;
     font-weight: 600;
     letter-spacing: 0.08em;
+    text-align: center;
     text-transform: uppercase;
     transition:
         transform 0.3s ease,
@@ -258,8 +262,7 @@ section {
         box-shadow 0.3s ease;
 }
 
-.button:hover,
-.button:focus {
+.button:hover {
     transform: translateY(-3px);
 }
 
@@ -269,8 +272,7 @@ section {
     box-shadow: 0 10px 28px rgba(215, 182, 111, 0.22);
 }
 
-.button-primary:hover,
-.button-primary:focus {
+.button-primary:hover {
     box-shadow: 0 14px 35px rgba(215, 182, 111, 0.36);
 }
 
@@ -280,13 +282,12 @@ section {
     color: var(--cream);
 }
 
-.button-secondary:hover,
-.button-secondary:focus {
+.button-secondary:hover {
     background-color: var(--cream);
     color: var(--midnight);
 }
 
-/* ---------- Shared Section Styles ---------- */
+/* ---------- Shared Sections ---------- */
 
 .intro-section,
 .offerings-section,
@@ -317,10 +318,17 @@ section {
     text-align: center;
 }
 
+.offerings-introduction,
+.contact-introduction {
+    max-width: 720px;
+    margin: 1.25rem auto 0;
+    color: var(--soft-white);
+    font-size: 1rem;
+}
+
 /* ---------- Journey Introduction ---------- */
 
 .intro-section {
-    position: relative;
     background:
         radial-gradient(
             circle at center,
@@ -344,87 +352,34 @@ section {
     content: "";
 }
 
-/* ---------- Offerings ---------- */
+/* ---------- Return to Yourself Collection ---------- */
 
 .offerings-section {
     background: linear-gradient(180deg, #0c091e 0%, #17102d 100%);
-}
-
-.card-grid {
-    width: min(1150px, 100%);
-    margin: 3.5rem auto 0;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-}
-
-.offering-card {
-    min-height: 285px;
-    padding: 2.5rem 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border: 1px solid rgba(215, 182, 111, 0.22);
-    border-radius: 22px;
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255, 255, 255, 0.07),
-            rgba(255, 255, 255, 0.02)
-        );
-    box-shadow: var(--shadow);
-    transition:
-        transform 0.35s ease,
-        border-color 0.35s ease;
-}
-
-.offering-card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(215, 182, 111, 0.58);
-}
-
-.offering-card h3 {
-    margin-bottom: 1rem;
-    color: var(--light-gold);
-    font-size: 2rem;
-    font-weight: 500;
-}
-
-.offering-card p {
-    color: var(--soft-white);
-    font-size: 0.95rem;
-}
-/* ---------- Product Storefront ---------- */
-
-.offerings-introduction {
-    max-width: 720px;
-    margin: 1.25rem auto 0;
-    color: var(--soft-white);
-    font-size: 1rem;
 }
 
 .product-grid {
     width: min(1250px, 100%);
     margin: 3.5rem auto 0;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     align-items: stretch;
     gap: 1.6rem;
 }
 
 .product-card {
     position: relative;
+    min-width: 0;
     display: flex;
     flex-direction: column;
     overflow: hidden;
     border: 1px solid rgba(215, 182, 111, 0.25);
     border-radius: 24px;
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255, 255, 255, 0.075),
-            rgba(255, 255, 255, 0.025)
-        );
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.075),
+        rgba(255, 255, 255, 0.025)
+    );
     box-shadow: var(--shadow);
     transition:
         transform 0.35s ease,
@@ -433,7 +388,7 @@ section {
 }
 
 .product-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-6px);
     border-color: rgba(215, 182, 111, 0.65);
     box-shadow: 0 24px 55px rgba(0, 0, 0, 0.38);
 }
@@ -452,14 +407,10 @@ section {
     z-index: 3;
     padding: 0.45rem 0.85rem;
     border-radius: 50px;
-    background: linear-gradient(
-        135deg,
-        var(--gold),
-        var(--light-gold)
-    );
+    background: linear-gradient(135deg, var(--gold), var(--light-gold));
     color: var(--midnight);
     font-size: 0.68rem;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
@@ -467,6 +418,7 @@ section {
 
 .product-image-container {
     position: relative;
+    flex-shrink: 0;
     aspect-ratio: 1 / 1;
     overflow: hidden;
     background-color: var(--deep-purple);
@@ -476,18 +428,19 @@ section {
     width: 100%;
     height: 100%;
     display: block;
-    object-fit: cover;
+    object-fit: contain;
     transition: transform 0.5s ease;
 }
 
 .product-card:hover .product-image {
-    transform: scale(1.035);
+    transform: scale(1.025);
 }
 
 .product-content {
-    height: 100%;
+    min-width: 0;
     padding: 2rem 1.7rem;
     display: flex;
+    flex: 1;
     flex-direction: column;
 }
 
@@ -501,7 +454,6 @@ section {
 }
 
 .product-card h3 {
-    min-height: 4.8rem;
     margin-bottom: 1rem;
     color: var(--light-gold);
     font-size: 2rem;
@@ -543,8 +495,8 @@ section {
 }
 
 .original-price {
-    margin-bottom: -0.4rem;
-    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 0.3rem;
+    color: rgba(255, 255, 255, 0.6);
     font-size: 0.85rem;
     text-decoration: line-through;
 }
@@ -566,16 +518,80 @@ section {
 .digital-product-notice {
     max-width: 760px;
     margin: 2.5rem auto 0;
-    color: rgba(255, 255, 255, 0.58);
+    color: rgba(255, 255, 255, 0.65);
     font-size: 0.76rem;
     line-height: 1.6;
     text-align: center;
 }
 
+/* ---------- Becoming Yourself ---------- */
+
+.becoming-section {
+    border-top: 1px solid rgba(215, 182, 111, 0.22);
+    background:
+        radial-gradient(
+            circle at 20% 45%,
+            rgba(151, 105, 197, 0.18),
+            transparent 45%
+        ),
+        linear-gradient(180deg, #17102d 0%, #0c091e 100%);
+}
+
+.becoming-section .eyebrow {
+    color: var(--light-gold);
+}
+
+.becoming-product-layout {
+    width: min(1100px, 100%);
+    margin: 3.5rem auto 0;
+}
+
+.becoming-product {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    align-items: stretch;
+    border-color: rgba(185, 163, 213, 0.45);
+}
+
+.becoming-product .product-image-container {
+    align-self: center;
+    width: 100%;
+    aspect-ratio: auto;
+}
+
+.becoming-product .product-image {
+    height: auto;
+    object-fit: contain;
+}
+
+.becoming-product .product-content {
+    padding: clamp(2rem, 4vw, 3.5rem);
+    justify-content: center;
+}
+
+.becoming-product h3 {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+}
+
+.becoming-product .product-description {
+    font-size: 1rem;
+}
+
+.becoming-product .product-features li {
+    font-size: 0.9rem;
+}
+
+.becoming-product .product-purchase {
+    margin-top: 0.5rem;
+}
+
+.becoming-product .product-button {
+    max-width: 380px;
+}
+
 /* ---------- About ---------- */
 
 .about-section {
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -622,24 +638,17 @@ section {
         #0b081c;
     text-align: center;
 }
-/* ---------- Contact Information ---------- */
-
-.contact-introduction {
-    max-width: 650px;
-    margin: 1.25rem auto 0;
-    color: var(--soft-white);
-    font-size: 1rem;
-}
 
 .contact-grid {
     width: min(1100px, 100%);
     margin-top: 2.5rem;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.5rem;
 }
 
 .contact-card {
+    min-width: 0;
     min-height: 210px;
     padding: 2rem 1.4rem;
     display: flex;
@@ -648,12 +657,11 @@ section {
     justify-content: center;
     border: 1px solid rgba(215, 182, 111, 0.28);
     border-radius: 22px;
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255, 255, 255, 0.08),
-            rgba(255, 255, 255, 0.025)
-        );
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.08),
+        rgba(255, 255, 255, 0.025)
+    );
     box-shadow: var(--shadow);
     transition:
         transform 0.35s ease,
@@ -661,8 +669,7 @@ section {
         background-color 0.35s ease;
 }
 
-.contact-card:hover,
-.contact-card:focus {
+.contact-card:hover {
     transform: translateY(-7px);
     border-color: var(--gold);
     background-color: rgba(215, 182, 111, 0.08);
@@ -704,29 +711,18 @@ section {
     text-align: center;
 }
 
-/* ---------- Tablet ---------- */
+/* ---------- Smaller Screens ---------- */
+
+@media (max-width: 1000px) {
+    .product-grid {
+        max-width: 620px;
+        grid-template-columns: 1fr;
+    }
+}
 
 @media (max-width: 900px) {
     .menu-button {
         display: block;
-    }
-
-    .contact-grid {
-        grid-template-columns: 1fr;
-        max-width: 620px;
-    }
-
-    .contact-card {
-        min-height: 175px;
-    }
-
-    .nav-links {
-        position: absolute;
-        top: 78px;
-
-.contact-card {
-    min-height: 175px;
-} 
     }
 
     .nav-links {
@@ -746,21 +742,28 @@ section {
         display: flex;
     }
 
-    .card-grid {
+    .contact-grid {
+        max-width: 620px;
         grid-template-columns: 1fr;
+    }
+
+    .contact-card {
+        min-height: 175px;
+    }
+
+    .becoming-product-layout {
         max-width: 620px;
     }
 
-    .offering-card {
-        min-height: auto;
+    .becoming-product {
+        grid-template-columns: 1fr;
     }
 }
-
-/* ---------- Mobile ---------- */
 
 @media (max-width: 600px) {
     .navbar {
         min-height: 70px;
+        gap: 1rem;
     }
 
     .logo {
@@ -794,8 +797,9 @@ section {
         align-items: center;
     }
 
-    .button {
+    .hero-buttons .button {
         width: min(290px, 100%);
+        min-width: 0;
     }
 
     .intro-section,
@@ -805,12 +809,34 @@ section {
         padding: 5rem 6%;
     }
 
+    .product-grid,
+    .becoming-product-layout {
+        margin-top: 2.5rem;
+    }
+
+    .product-content,
+    .becoming-product .product-content {
+        padding: 1.7rem 1.3rem;
+    }
+
+    .product-card h3 {
+        font-size: 1.8rem;
+    }
+
+    .becoming-product h3 {
+        font-size: 2.5rem;
+    }
+
+    .product-price {
+        font-size: 2.2rem;
+    }
+
     .about-content {
         padding: 2.2rem 1.6rem;
     }
 }
 
-/* ---------- Reduced Motion Accessibility ---------- */
+/* ---------- Reduced Motion ---------- */
 
 @media (prefers-reduced-motion: reduce) {
     html {
@@ -821,31 +847,5 @@ section {
     *::before,
     *::after {
         transition-duration: 0.01ms !important;
-    }
-}
-/* Product Storefront Responsive Layout */
-
-@media (max-width: 1000px) {
-    .product-grid {
-        max-width: 680px;
-        grid-template-columns: 1fr;
-    }
-
-    .product-card h3 {
-        min-height: auto;
-    }
-}
-
-@media (max-width: 600px) {
-    .product-content {
-        padding: 1.7rem 1.3rem;
-    }
-
-    .product-card h3 {
-        font-size: 1.8rem;
-    }
-
-    .product-price {
-        font-size: 2.2rem;
     }
 }

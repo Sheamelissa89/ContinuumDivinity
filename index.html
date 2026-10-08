@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,16 +10,13 @@
     >
 
     <title>Continuum Divinity</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <!-- ==================== NAVIGATION ==================== -->
-
     <header class="site-header">
-
         <nav class="navbar">
 
             <a href="#home" class="logo">
@@ -46,16 +42,12 @@
             </ul>
 
         </nav>
-
     </header>
-
 
     <main>
 
         <!-- ==================== HERO ==================== -->
-
         <section class="hero" id="home">
-
             <div class="hero-overlay"></div>
 
             <div class="hero-content">
@@ -75,34 +67,22 @@
                 </p>
 
                 <div class="hero-buttons">
-
-                    <a
-                        href="#journey"
-                        class="button button-primary"
-                    >
+                    <a href="#journey" class="button button-primary">
                         Begin Your Journey
                     </a>
 
-                    <a
-                        href="#about"
-                        class="button button-secondary"
-                    >
+                    <a href="#about" class="button button-secondary">
                         Discover the Mission
                     </a>
-
                 </div>
 
             </div>
-
         </section>
 
-
         <!-- ==================== JOURNEY INTRODUCTION ==================== -->
-
         <section class="intro-section" id="journey">
 
             <div class="section-heading">
-
                 <p class="eyebrow">
                     Your journey begins within
                 </p>
@@ -110,7 +90,6 @@
                 <h2>
                     You were never meant to abandon yourself.
                 </h2>
-
             </div>
 
             <p class="section-text">
@@ -122,13 +101,10 @@
 
         </section>
 
-
         <!-- ==================== THE CONTINUUM OF BECOMING ==================== -->
-
         <section class="offerings-section continuum-section" id="offerings">
 
             <div class="section-heading">
-
                 <p class="eyebrow">
                     A journey that begins and ends with you
                 </p>
@@ -142,54 +118,87 @@
                     Explore the stages of transformation and discover the
                     guidance that speaks to where you are in your journey.
                 </p>
-
             </div>
 
-
-            <!-- ==================== CELESTIAL CIRCLE ==================== -->
-
+            <!-- ==================== SACRED INFINITY FLOWER ==================== -->
             <div class="continuum-container">
 
                 <div class="continuum-circle" id="continuumCircle">
 
-                    <!-- Rotating decorative celestial rings -->
+                    <!-- Four infinity symbols sharing one exact center -->
+                    <svg
+                        class="celestial-ring sacred-infinity-flower"
+                        viewBox="0 0 600 600"
+                        width="100%"
+                        height="100%"
+                        aria-hidden="true"
+                        focusable="false"
+                        style="inset: 0; display: block; transform-origin: 50% 50%;"
+                    >
+                        <defs>
+                            <linearGradient
+                                id="infinityGold"
+                                x1="0%"
+                                y1="0%"
+                                x2="100%"
+                                y2="100%"
+                            >
+                                <stop offset="0%" stop-color="#8c7046" />
+                                <stop offset="24%" stop-color="#d4bc8d" />
+                                <stop offset="45%" stop-color="#f5e8ca" />
+                                <stop offset="62%" stop-color="#af905c" />
+                                <stop offset="82%" stop-color="#ead7b0" />
+                                <stop offset="100%" stop-color="#927548" />
+                            </linearGradient>
 
-                    <div class="celestial-ring celestial-ring-outer"></div>
+                            <path
+                                id="infinityPetals"
+                                d="
+                                    M 300 300
+                                    C 244 240, 166 234, 60 300
+                                    C 166 366, 244 360, 300 300
+                                    C 356 240, 434 234, 540 300
+                                    C 434 366, 356 360, 300 300
+                                    Z
+                                "
+                            />
+                        </defs>
 
-                    <div class="celestial-ring celestial-ring-inner"></div>
+                        <g
+                            fill="none"
+                            stroke="url(#infinityGold)"
+                            stroke-width="3"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <use href="#infinityPetals" />
 
+                            <use
+                                href="#infinityPetals"
+                                transform="rotate(45 300 300)"
+                            />
 
-                    <!-- CENTER EMBLEM -->
+                            <use
+                                href="#infinityPetals"
+                                transform="rotate(90 300 300)"
+                            />
 
-                    <div class="continuum-center">
+                            <use
+                                href="#infinityPetals"
+                                transform="rotate(135 300 300)"
+                            />
+                        </g>
+                    </svg>
 
-                        <span class="center-symbol">✦</span>
-
-                        <h3>
-                            CONTINUUM<br>
-                            DIVINITY
-                        </h3>
-
-                        <p>
-                            The journey<br>
-                            returns to you
-                        </p>
-
-                        <span class="center-symbol">✦</span>
-
-                    </div>
-
-
-                    <!-- POSITION 1: 12 O'CLOCK -->
-
+                    <!-- GUIDE 1: RETURN TO YOURSELF -->
                     <button
                         type="button"
                         class="journey-node node-return active"
                         data-guide="return"
                         aria-label="Explore Return to Yourself"
+                        aria-controls="panel-return"
                         aria-pressed="true"
                     >
-
                         <img
                             src="images/Guide-product.png"
                             alt="Return to Yourself guide cover"
@@ -199,20 +208,17 @@
                         <span class="journey-node-title">
                             Return to Yourself
                         </span>
-
                     </button>
 
-
-                    <!-- POSITION 2: BECOMING YOURSELF -->
-
+                    <!-- GUIDE 2: BECOMING YOURSELF -->
                     <button
                         type="button"
                         class="journey-node node-becoming"
                         data-guide="becoming"
                         aria-label="Explore Becoming Yourself"
+                        aria-controls="panel-becoming"
                         aria-pressed="false"
                     >
-
                         <img
                             src="images/becoming-yourself-product.png"
                             alt="Becoming Yourself guide cover"
@@ -222,20 +228,17 @@
                         <span class="journey-node-title">
                             Becoming Yourself
                         </span>
-
                     </button>
 
-
-                    <!-- POSITION 3: EMBODIMENT -->
-
+                    <!-- GUIDE 3: EMBODIMENT -->
                     <button
                         type="button"
                         class="journey-node node-embodiment"
                         data-guide="embodiment"
                         aria-label="Explore Embodiment"
+                        aria-controls="panel-embodiment"
                         aria-pressed="false"
                     >
-
                         <img
                             src="images/EmbodimentGuide.png"
                             alt="Embodiment guide by Shea Melissa"
@@ -245,21 +248,20 @@
                         <span class="journey-node-title">
                             Embodiment
                         </span>
-
                     </button>
 
-
-                    <!-- POSITION 4: INTEGRATION -->
-
+                    <!-- GUIDE 4: INTEGRATION -->
                     <button
                         type="button"
                         class="journey-node node-integration coming-soon"
                         data-guide="integration"
                         aria-label="Explore Integration, coming soon"
+                        aria-controls="panel-integration"
                         aria-pressed="false"
                     >
-
-                        <span class="journey-placeholder">✧</span>
+                        <span class="journey-placeholder" aria-hidden="true">
+                            ✧
+                        </span>
 
                         <span class="journey-node-title">
                             Integration
@@ -268,21 +270,20 @@
                         <span class="coming-soon-label">
                             Coming Soon
                         </span>
-
                     </button>
 
-
-                    <!-- POSITION 5: RETURN AGAIN -->
-
+                    <!-- GUIDE 5: RETURN AGAIN -->
                     <button
                         type="button"
                         class="journey-node node-return-again coming-soon"
                         data-guide="return-again"
                         aria-label="Explore Return Again, coming soon"
+                        aria-controls="panel-return-again"
                         aria-pressed="false"
                     >
-
-                        <span class="journey-placeholder">✧</span>
+                        <span class="journey-placeholder" aria-hidden="true">
+                            ✧
+                        </span>
 
                         <span class="journey-node-title">
                             Return Again
@@ -291,16 +292,12 @@
                         <span class="coming-soon-label">
                             Coming Soon
                         </span>
-
                     </button>
 
-                </div>
+                </div><!-- END continuum-circle -->
 
-
-                <!-- ROTATION CONTROLS -->
-
+                <!-- ROTATION CONTROL -->
                 <div class="continuum-controls">
-
                     <button
                         type="button"
                         id="rotationToggle"
@@ -309,27 +306,20 @@
                     >
                         Pause Rotation
                     </button>
-
                 </div>
 
-            </div>
-
+            </div><!-- END continuum-container -->
 
             <!-- ==================== GUIDE INFORMATION PANELS ==================== -->
-
             <div class="journey-details" id="journeyDetails">
 
-
                 <!-- RETURN TO YOURSELF -->
-
                 <section
                     class="journey-panel active"
                     id="panel-return"
                     data-panel="return"
                 >
-
                     <div class="section-heading">
-
                         <p class="eyebrow">
                             The beginning and the return
                         </p>
@@ -343,29 +333,22 @@
                             own voice. Choose the guide, companion workbook,
                             or complete collection.
                         </p>
-
                     </div>
-
 
                     <div class="product-grid">
 
                         <!-- GUIDE -->
-
                         <article class="product-card">
-
                             <div class="product-image-container">
-
                                 <img
                                     src="images/Guide-product.png"
                                     alt="Return to Yourself spiritual guide"
                                     class="product-image"
                                     loading="lazy"
                                 >
-
                             </div>
 
                             <div class="product-content">
-
                                 <p class="product-type">
                                     Digital Spiritual Guide
                                 </p>
@@ -390,7 +373,6 @@
                                 </ul>
 
                                 <div class="product-purchase">
-
                                     <p class="product-price">
                                         $7.99
                                     </p>
@@ -403,31 +385,22 @@
                                     >
                                         Purchase the Guide
                                     </a>
-
                                 </div>
-
                             </div>
-
                         </article>
 
-
                         <!-- WORKBOOK -->
-
                         <article class="product-card">
-
                             <div class="product-image-container">
-
                                 <img
                                     src="images/workbook-product.png"
                                     alt="Return to Yourself workbook"
                                     class="product-image"
                                     loading="lazy"
                                 >
-
                             </div>
 
                             <div class="product-content">
-
                                 <p class="product-type">
                                     Fillable &amp; Printable Workbook
                                 </p>
@@ -452,7 +425,6 @@
                                 </ul>
 
                                 <div class="product-purchase">
-
                                     <p class="product-price">
                                         $12.99
                                     </p>
@@ -465,35 +437,26 @@
                                     >
                                         Purchase the Workbook
                                     </a>
-
                                 </div>
-
                             </div>
-
                         </article>
 
-
                         <!-- BUNDLE -->
-
                         <article class="product-card featured-product">
-
                             <div class="best-value-badge">
                                 Best Value
                             </div>
 
                             <div class="product-image-container">
-
                                 <img
                                     src="images/bundle-product.png"
                                     alt="Return to Yourself complete collection"
                                     class="product-image"
                                     loading="lazy"
                                 >
-
                             </div>
 
                             <div class="product-content">
-
                                 <p class="product-type">
                                     Guide &amp; Workbook Bundle
                                 </p>
@@ -517,7 +480,6 @@
                                 </ul>
 
                                 <div class="product-purchase">
-
                                     <p class="original-price">
                                         $20.98
                                     </p>
@@ -534,29 +496,21 @@
                                     >
                                         Purchase the Bundle
                                     </a>
-
                                 </div>
-
                             </div>
-
                         </article>
 
                     </div>
-
                 </section>
 
-
                 <!-- BECOMING YOURSELF -->
-
                 <section
                     class="journey-panel"
                     id="panel-becoming"
                     data-panel="becoming"
                     hidden
                 >
-
                     <div class="section-heading">
-
                         <p class="eyebrow">
                             The awakening
                         </p>
@@ -572,27 +526,21 @@
                             you have carried and make space for the
                             woman you are becoming.
                         </p>
-
                     </div>
 
-
                     <div class="becoming-product-layout">
-
                         <article class="product-card becoming-product">
 
                             <div class="product-image-container">
-
                                 <img
                                     src="images/becoming-yourself-product.png"
                                     alt="Becoming Yourself guide cover featuring three women"
                                     class="product-image"
                                     loading="lazy"
                                 >
-
                             </div>
 
                             <div class="product-content">
-
                                 <p class="product-type">
                                     Digital Self-Discovery Guide
                                 </p>
@@ -618,7 +566,6 @@
                                 </ul>
 
                                 <div class="product-purchase">
-
                                     <p class="product-price">
                                         $12.99
                                     </p>
@@ -631,29 +578,21 @@
                                     >
                                         Purchase Becoming Yourself
                                     </a>
-
                                 </div>
-
                             </div>
 
                         </article>
-
                     </div>
-
                 </section>
 
-
                 <!-- EMBODIMENT -->
-
                 <section
                     class="journey-panel"
                     id="panel-embodiment"
                     data-panel="embodiment"
                     hidden
                 >
-
                     <div class="section-heading">
-
                         <p class="eyebrow">
                             The choice
                         </p>
@@ -665,27 +604,21 @@
                         <p class="offerings-introduction">
                             When Knowing Yourself Becomes Choosing Yourself
                         </p>
-
                     </div>
 
-
                     <div class="becoming-product-layout">
-
                         <article class="product-card becoming-product">
 
                             <div class="product-image-container">
-
                                 <img
                                     src="images/EmbodimentGuide.png"
                                     alt="Embodiment Guide by Shea Melissa"
                                     class="product-image"
                                     loading="lazy"
                                 >
-
                             </div>
 
                             <div class="product-content">
-
                                 <p class="product-type">
                                     Digital Personal Growth Guide
                                 </p>
@@ -723,7 +656,6 @@
                                 </ul>
 
                                 <div class="product-purchase">
-
                                     <p class="product-price">
                                         $12.99
                                     </p>
@@ -736,29 +668,21 @@
                                     >
                                         Purchase Embodiment
                                     </a>
-
                                 </div>
-
                             </div>
 
                         </article>
-
                     </div>
-
                 </section>
 
-
                 <!-- INTEGRATION -->
-
                 <section
                     class="journey-panel"
                     id="panel-integration"
                     data-panel="integration"
                     hidden
                 >
-
                     <div class="section-heading">
-
                         <p class="eyebrow">
                             The alignment
                         </p>
@@ -776,23 +700,17 @@
                         <p class="coming-soon-message">
                             ✦ Coming Soon ✦
                         </p>
-
                     </div>
-
                 </section>
 
-
                 <!-- RETURN AGAIN -->
-
                 <section
                     class="journey-panel"
                     id="panel-return-again"
                     data-panel="return-again"
                     hidden
                 >
-
                     <div class="section-heading">
-
                         <p class="eyebrow">
                             The continuation
                         </p>
@@ -811,42 +729,39 @@
                         <p class="coming-soon-message">
                             ✦ Coming Soon ✦
                         </p>
-
                     </div>
-
                 </section>
 
-            </div>
+            </div><!-- END journey-details -->
 
             <!-- ==================== JOURNEY NAVIGATION ==================== -->
+            <div class="journey-navigation">
 
-<div class="journey-navigation">
+                <button
+                    type="button"
+                    id="previousGuide"
+                    class="button button-secondary journey-nav-button"
+                >
+                    ← Previous
+                </button>
 
-    <button
-        type="button"
-        id="previousGuide"
-        class="button button-secondary journey-nav-button"
-    >
-        ← Previous
-    </button>
+                <button
+                    type="button"
+                    id="returnToWheel"
+                    class="button button-primary journey-nav-button"
+                >
+                    ✦ Return to Wheel
+                </button>
 
-    <button
-        type="button"
-        id="returnToWheel"
-        class="button button-primary journey-nav-button"
-    >
-        ✦ Return to Wheel
-    </button>
+                <button
+                    type="button"
+                    id="nextGuide"
+                    class="button button-secondary journey-nav-button"
+                >
+                    Next →
+                </button>
 
-    <button
-        type="button"
-        id="nextGuide"
-        class="button button-secondary journey-nav-button"
-    >
-        Next →
-    </button>
-
-</div>
+            </div>
 
             <p class="digital-product-notice">
                 All available products are digital downloads.
@@ -854,15 +769,12 @@
                 Purchases are securely processed and delivered through Payhip.
             </p>
 
-        </section>
-
+        </section><!-- END offerings -->
 
         <!-- ==================== ABOUT ==================== -->
-
         <section class="about-section" id="about">
 
             <div class="about-content">
-
                 <p class="eyebrow">
                     The heart of Continuum Divinity
                 </p>
@@ -878,18 +790,14 @@
                     for something greater: the freedom to live as your
                     fullest, most authentic self.
                 </p>
-
             </div>
 
         </section>
 
-
         <!-- ==================== CONTACT ==================== -->
-
         <section class="contact-section" id="contact">
 
             <div class="section-heading">
-
                 <p class="eyebrow">
                     Stay connected
                 </p>
@@ -902,20 +810,16 @@
                     Connect with Continuum Divinity through email,
                     phone, or GitHub.
                 </p>
-
             </div>
-
 
             <div class="contact-grid">
 
                 <!-- EMAIL -->
-
                 <a
                     href="mailto:Shea_melissa89@yahoo.com"
                     class="contact-card"
                     aria-label="Email Continuum Divinity"
                 >
-
                     <span class="contact-icon">✉</span>
 
                     <span class="contact-label">
@@ -925,18 +829,14 @@
                     <span class="contact-detail">
                         Shea_melissa89@yahoo.com
                     </span>
-
                 </a>
 
-
                 <!-- PHONE -->
-
                 <a
                     href="tel:+19168806720"
                     class="contact-card"
                     aria-label="Call or text Continuum Divinity"
                 >
-
                     <span class="contact-icon">☎</span>
 
                     <span class="contact-label">
@@ -946,12 +846,9 @@
                     <span class="contact-detail">
                         (916) 880-6720
                     </span>
-
                 </a>
 
-
                 <!-- GITHUB -->
-
                 <a
                     href="https://github.com/Sheamelissa89"
                     class="contact-card"
@@ -959,7 +856,6 @@
                     rel="noopener noreferrer"
                     aria-label="Visit Shea's GitHub profile"
                 >
-
                     <span class="contact-icon">
                         &lt;/&gt;
                     </span>
@@ -971,34 +867,25 @@
                     <span class="contact-detail">
                         github.com/Sheamelissa89
                     </span>
-
                 </a>
 
             </div>
-
         </section>
 
     </main>
 
-
     <!-- ==================== FOOTER ==================== -->
-
     <footer class="site-footer">
-
         <p>
             &copy;
             <span id="currentYear"></span>
             Continuum Divinity.
             All rights reserved.
         </p>
-
     </footer>
 
-
     <!-- ==================== JAVASCRIPT ==================== -->
-
     <script src="script.js"></script>
 
 </body>
-
 </html>

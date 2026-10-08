@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,13 +11,21 @@
     >
 
     <title>Continuum Divinity</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+    <!-- ==================== NAVIGATION ==================== -->
+
     <header class="site-header">
+
         <nav class="navbar">
-            <a href="#home" class="logo">Continuum Divinity</a>
+
+            <a href="#home" class="logo">
+                Continuum Divinity
+            </a>
 
             <button
                 class="menu-button"
@@ -35,17 +44,29 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Connect</a></li>
             </ul>
+
         </nav>
+
     </header>
 
+
     <main>
+
+        <!-- ==================== HERO ==================== -->
+
         <section class="hero" id="home">
+
             <div class="hero-overlay"></div>
 
             <div class="hero-content">
-                <p class="eyebrow">Awaken • Remember • Reclaim</p>
 
-                <h1>Return to the power that has always lived within you.</h1>
+                <p class="eyebrow">
+                    Awaken • Remember • Reclaim
+                </p>
+
+                <h1>
+                    Return to the power that has always lived within you.
+                </h1>
 
                 <p class="hero-description">
                     Continuum Divinity is a sacred space for healing,
@@ -54,21 +75,42 @@
                 </p>
 
                 <div class="hero-buttons">
-                    <a href="#journey" class="button button-primary">
+
+                    <a
+                        href="#journey"
+                        class="button button-primary"
+                    >
                         Begin Your Journey
                     </a>
 
-                    <a href="#about" class="button button-secondary">
+                    <a
+                        href="#about"
+                        class="button button-secondary"
+                    >
                         Discover the Mission
                     </a>
+
                 </div>
+
             </div>
+
         </section>
 
+
+        <!-- ==================== JOURNEY INTRODUCTION ==================== -->
+
         <section class="intro-section" id="journey">
+
             <div class="section-heading">
-                <p class="eyebrow">Your journey begins within</p>
-                <h2>You were never meant to abandon yourself.</h2>
+
+                <p class="eyebrow">
+                    Your journey begins within
+                </p>
+
+                <h2>
+                    You were never meant to abandon yourself.
+                </h2>
+
             </div>
 
             <p class="section-text">
@@ -77,278 +119,838 @@
                 expectations of others taught you to disconnect from your
                 own truth.
             </p>
+
         </section>
 
-        <!-- Return to Yourself collection -->
-        <section class="offerings-section" id="offerings">
+
+        <!-- ==================== THE CONTINUUM OF BECOMING ==================== -->
+
+        <section class="offerings-section continuum-section" id="offerings">
+
             <div class="section-heading">
-                <p class="eyebrow">Begin with reconnection</p>
-                <h2>Return to Yourself</h2>
+
+                <p class="eyebrow">
+                    A journey that begins and ends with you
+                </p>
+
+                <h2>
+                    The Continuum of Becoming
+                </h2>
 
                 <p class="offerings-introduction">
-                    Reconnect with your truth and make space for your own voice.
-                    Read the guide, explore the companion workbook, or bring
-                    both together with the complete Return to Yourself collection.
+                    Every ending is a return. Every return is a new beginning.
+                    Explore the stages of transformation and discover the
+                    guidance that speaks to where you are in your journey.
                 </p>
+
             </div>
 
-            <div class="product-grid">
-                <!-- Spiritual Guide -->
-                <article class="product-card">
-                    <div class="product-image-container">
+
+            <!-- ==================== CELESTIAL CIRCLE ==================== -->
+
+            <div class="continuum-container">
+
+                <div class="continuum-circle" id="continuumCircle">
+
+                    <!-- Rotating decorative celestial rings -->
+
+                    <div class="celestial-ring celestial-ring-outer"></div>
+
+                    <div class="celestial-ring celestial-ring-inner"></div>
+
+
+                    <!-- CENTER EMBLEM -->
+
+                    <div class="continuum-center">
+
+                        <span class="center-symbol">✦</span>
+
+                        <h3>
+                            CONTINUUM<br>
+                            DIVINITY
+                        </h3>
+
+                        <p>
+                            The journey<br>
+                            returns to you
+                        </p>
+
+                        <span class="center-symbol">✦</span>
+
+                    </div>
+
+
+                    <!-- POSITION 1: 12 O'CLOCK -->
+
+                    <button
+                        type="button"
+                        class="journey-node node-return active"
+                        data-guide="return"
+                        aria-label="Explore Return to Yourself"
+                        aria-pressed="true"
+                    >
+
                         <img
                             src="images/Guide-product.png"
-                            alt="Return to Yourself spiritual guide"
-                            class="product-image"
+                            alt="Return to Yourself guide cover"
+                            loading="lazy"
                         >
-                    </div>
 
-                    <div class="product-content">
-                        <p class="product-type">Digital Spiritual Guide</p>
-                        <h3>Return to Yourself: The Guide</h3>
+                        <span class="journey-node-title">
+                            Return to Yourself
+                        </span>
 
-                        <p class="product-description">
-                            A compassionate spiritual guide for reconnecting
-                            with your truth, strengthening your inner voice,
-                            and reclaiming the personal power that has always
-                            lived within you.
-                        </p>
+                    </button>
 
-                        <ul class="product-features">
-                            <li>Insight inspired by lived transformation</li>
-                            <li>Guidance for rebuilding self-trust</li>
-                            <li>Reflection and empowerment exercises</li>
-                            <li>Downloadable digital PDF</li>
-                        </ul>
 
-                        <div class="product-purchase">
-                            <p class="product-price">$7.99</p>
+                    <!-- POSITION 2: BECOMING YOURSELF -->
 
-                            <a
-                                href="https://payhip.com/b/JXATS"
-                                class="button button-primary product-button"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Purchase the Guide
-                            </a>
-                        </div>
-                    </div>
-                </article>
+                    <button
+                        type="button"
+                        class="journey-node node-becoming"
+                        data-guide="becoming"
+                        aria-label="Explore Becoming Yourself"
+                        aria-pressed="false"
+                    >
 
-                <!-- Fillable Workbook -->
-                <article class="product-card">
-                    <div class="product-image-container">
-                        <img
-                            src="images/workbook-product.png"
-                            alt="Return to Yourself fillable and printable workbook"
-                            class="product-image"
-                        >
-                    </div>
-
-                    <div class="product-content">
-                        <p class="product-type">Fillable &amp; Printable Workbook</p>
-                        <h3>Return to Yourself: The Workbook</h3>
-
-                        <p class="product-description">
-                            A guided space for exploring your experiences,
-                            identifying limiting patterns, reconnecting with
-                            your intuition, and intentionally choosing what
-                            comes next.
-                        </p>
-
-                        <ul class="product-features">
-                            <li>Guided reflection questions</li>
-                            <li>Fillable digital writing spaces</li>
-                            <li>Printable journaling pages</li>
-                            <li>Self-paced exercises and practices</li>
-                        </ul>
-
-                        <div class="product-purchase">
-                            <p class="product-price">$12.99</p>
-
-                            <a
-                                href="https://payhip.com/b/1yG0b"
-                                class="button button-primary product-button"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Purchase the Workbook
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Guide and Workbook Bundle -->
-                <article class="product-card featured-product">
-                    <div class="best-value-badge">Best Value</div>
-
-                    <div class="product-image-container">
-                        <img
-                            src="images/bundle-product.png"
-                            alt="Return to Yourself guide and workbook bundle"
-                            class="product-image"
-                        >
-                    </div>
-
-                    <div class="product-content">
-                        <p class="product-type">Guide &amp; Workbook Bundle</p>
-                        <h3>Return to Yourself: The Complete Journey</h3>
-
-                        <p class="product-description">
-                            Read, reflect, write, and transform with the
-                            Return to Yourself spiritual guide and its
-                            fillable and printable companion workbook.
-                        </p>
-
-                        <ul class="product-features">
-                            <li>The Return to Yourself spiritual guide</li>
-                            <li>The fillable and printable workbook</li>
-                            <li>Two downloadable PDF files</li>
-                            <li>Save $2.99 when purchased together</li>
-                        </ul>
-
-                        <div class="product-purchase">
-                            <p class="original-price">$20.98</p>
-                            <p class="product-price">$17.99</p>
-
-                            <a
-                                href="https://payhip.com/b/J2A14"
-                                class="button button-primary product-button"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Purchase the Bundle
-                            </a>
-                        </div>
-                    </div>
-                </article>
-            </div>
-
-            <p class="digital-product-notice">
-                All products are digital downloads. No physical products
-                will be mailed. Purchases are securely processed and delivered
-                through Payhip.
-            </p>
-        </section>
-
-        <!-- Becoming Yourself: the next step -->
-        <section
-            class="offerings-section becoming-section"
-            id="becoming-yourself"
-        >
-            <div class="section-heading">
-                <p class="eyebrow">The next step in your journey</p>
-                <h2>Becoming Yourself</h2>
-
-                <p class="offerings-introduction">
-                    Returning to yourself opens the door. Becoming yourself
-                    invites you to step through it—to explore who you are
-                    beyond the roles you have carried and make space for
-                    the woman you are becoming.
-                </p>
-            </div>
-
-            <div class="becoming-product-layout">
-                <article class="product-card becoming-product">
-                    <div class="product-image-container">
                         <img
                             src="images/becoming-yourself-product.png"
-                            alt="Becoming Yourself guide cover featuring three women"
-                            class="product-image"
+                            alt="Becoming Yourself guide cover"
+                            loading="lazy"
                         >
-                    </div>
 
-                    <div class="product-content">
-                        <p class="product-type">Digital Self-Discovery Guide</p>
-                        <h3>Becoming Yourself</h3>
+                        <span class="journey-node-title">
+                            Becoming Yourself
+                        </span>
 
-                        <p class="product-description">
-                            A compassionate exploration of identity, inner
-                            transformation, and the journey toward becoming
-                            more fully yourself. Make space for your own voice,
-                            explore the roles you have carried, and reconnect
-                            with the woman you are becoming.
-                        </p>
+                    </button>
 
-                        <ul class="product-features">
-                            <li>Explore identity and personal transformation</li>
-                            <li>Reflect on patterns and expectations</li>
-                            <li>Reconnect with your inner voice</li>
-                            <li>Downloadable digital PDF</li>
-                        </ul>
 
-                        <div class="product-purchase">
-                            <p class="product-price">$12.99</p>
+                    <!-- POSITION 3: EMBODIMENT -->
 
-                            <a
-                                href="https://payhip.com/b/2jsL1"
-                                class="button button-primary product-button"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Purchase Becoming Yourself
-                            </a>
-                        </div>
-                    </div>
-                </article>
+                    <button
+                        type="button"
+                        class="journey-node node-embodiment"
+                        data-guide="embodiment"
+                        aria-label="Explore Embodiment"
+                        aria-pressed="false"
+                    >
+
+                        <img
+                            src="images/EmbodimentGuide.png"
+                            alt="Embodiment guide by Shea Melissa"
+                            loading="lazy"
+                        >
+
+                        <span class="journey-node-title">
+                            Embodiment
+                        </span>
+
+                    </button>
+
+
+                    <!-- POSITION 4: INTEGRATION -->
+
+                    <button
+                        type="button"
+                        class="journey-node node-integration coming-soon"
+                        data-guide="integration"
+                        aria-label="Explore Integration, coming soon"
+                        aria-pressed="false"
+                    >
+
+                        <span class="journey-placeholder">✧</span>
+
+                        <span class="journey-node-title">
+                            Integration
+                        </span>
+
+                        <span class="coming-soon-label">
+                            Coming Soon
+                        </span>
+
+                    </button>
+
+
+                    <!-- POSITION 5: RETURN AGAIN -->
+
+                    <button
+                        type="button"
+                        class="journey-node node-return-again coming-soon"
+                        data-guide="return-again"
+                        aria-label="Explore Return Again, coming soon"
+                        aria-pressed="false"
+                    >
+
+                        <span class="journey-placeholder">✧</span>
+
+                        <span class="journey-node-title">
+                            Return Again
+                        </span>
+
+                        <span class="coming-soon-label">
+                            Coming Soon
+                        </span>
+
+                    </button>
+
+                </div>
+
+
+                <!-- ROTATION CONTROLS -->
+
+                <div class="continuum-controls">
+
+                    <button
+                        type="button"
+                        id="rotationToggle"
+                        class="button button-secondary rotation-button"
+                        aria-pressed="false"
+                    >
+                        Pause Rotation
+                    </button>
+
+                </div>
+
             </div>
 
+
+            <!-- ==================== GUIDE INFORMATION PANELS ==================== -->
+
+            <div class="journey-details" id="journeyDetails">
+
+
+                <!-- RETURN TO YOURSELF -->
+
+                <section
+                    class="journey-panel active"
+                    id="panel-return"
+                    data-panel="return"
+                >
+
+                    <div class="section-heading">
+
+                        <p class="eyebrow">
+                            The beginning and the return
+                        </p>
+
+                        <h2>
+                            Return to Yourself
+                        </h2>
+
+                        <p class="offerings-introduction">
+                            Reconnect with your truth and make space for your
+                            own voice. Choose the guide, companion workbook,
+                            or complete collection.
+                        </p>
+
+                    </div>
+
+
+                    <div class="product-grid">
+
+                        <!-- GUIDE -->
+
+                        <article class="product-card">
+
+                            <div class="product-image-container">
+
+                                <img
+                                    src="images/Guide-product.png"
+                                    alt="Return to Yourself spiritual guide"
+                                    class="product-image"
+                                    loading="lazy"
+                                >
+
+                            </div>
+
+                            <div class="product-content">
+
+                                <p class="product-type">
+                                    Digital Spiritual Guide
+                                </p>
+
+                                <h3>
+                                    Return to Yourself: The Guide
+                                </h3>
+
+                                <p class="product-description">
+                                    A compassionate spiritual guide for
+                                    reconnecting with your truth,
+                                    strengthening your inner voice,
+                                    and reclaiming the personal power
+                                    that has always lived within you.
+                                </p>
+
+                                <ul class="product-features">
+                                    <li>Insight inspired by lived transformation</li>
+                                    <li>Guidance for rebuilding self-trust</li>
+                                    <li>Reflection and empowerment exercises</li>
+                                    <li>Downloadable digital PDF</li>
+                                </ul>
+
+                                <div class="product-purchase">
+
+                                    <p class="product-price">
+                                        $7.99
+                                    </p>
+
+                                    <a
+                                        href="https://payhip.com/b/JXATS"
+                                        class="button button-primary product-button"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        Purchase the Guide
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- WORKBOOK -->
+
+                        <article class="product-card">
+
+                            <div class="product-image-container">
+
+                                <img
+                                    src="images/workbook-product.png"
+                                    alt="Return to Yourself workbook"
+                                    class="product-image"
+                                    loading="lazy"
+                                >
+
+                            </div>
+
+                            <div class="product-content">
+
+                                <p class="product-type">
+                                    Fillable &amp; Printable Workbook
+                                </p>
+
+                                <h3>
+                                    Return to Yourself: The Workbook
+                                </h3>
+
+                                <p class="product-description">
+                                    A guided space for exploring your
+                                    experiences, identifying limiting
+                                    patterns, reconnecting with your
+                                    intuition, and intentionally choosing
+                                    what comes next.
+                                </p>
+
+                                <ul class="product-features">
+                                    <li>Guided reflection questions</li>
+                                    <li>Fillable digital writing spaces</li>
+                                    <li>Printable journaling pages</li>
+                                    <li>Self-paced exercises and practices</li>
+                                </ul>
+
+                                <div class="product-purchase">
+
+                                    <p class="product-price">
+                                        $12.99
+                                    </p>
+
+                                    <a
+                                        href="https://payhip.com/b/1yG0b"
+                                        class="button button-primary product-button"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        Purchase the Workbook
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- BUNDLE -->
+
+                        <article class="product-card featured-product">
+
+                            <div class="best-value-badge">
+                                Best Value
+                            </div>
+
+                            <div class="product-image-container">
+
+                                <img
+                                    src="images/bundle-product.png"
+                                    alt="Return to Yourself complete collection"
+                                    class="product-image"
+                                    loading="lazy"
+                                >
+
+                            </div>
+
+                            <div class="product-content">
+
+                                <p class="product-type">
+                                    Guide &amp; Workbook Bundle
+                                </p>
+
+                                <h3>
+                                    Return to Yourself: The Complete Journey
+                                </h3>
+
+                                <p class="product-description">
+                                    Read, reflect, write, and transform
+                                    with the Return to Yourself spiritual
+                                    guide and its fillable and printable
+                                    companion workbook.
+                                </p>
+
+                                <ul class="product-features">
+                                    <li>The Return to Yourself spiritual guide</li>
+                                    <li>The fillable and printable workbook</li>
+                                    <li>Two downloadable PDF files</li>
+                                    <li>Save $2.99 when purchased together</li>
+                                </ul>
+
+                                <div class="product-purchase">
+
+                                    <p class="original-price">
+                                        $20.98
+                                    </p>
+
+                                    <p class="product-price">
+                                        $17.99
+                                    </p>
+
+                                    <a
+                                        href="https://payhip.com/b/J2A14"
+                                        class="button button-primary product-button"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        Purchase the Bundle
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+
+                <!-- BECOMING YOURSELF -->
+
+                <section
+                    class="journey-panel"
+                    id="panel-becoming"
+                    data-panel="becoming"
+                    hidden
+                >
+
+                    <div class="section-heading">
+
+                        <p class="eyebrow">
+                            The awakening
+                        </p>
+
+                        <h2>
+                            Becoming Yourself
+                        </h2>
+
+                        <p class="offerings-introduction">
+                            Returning to yourself opens the door.
+                            Becoming yourself invites you to step through
+                            it—to explore who you are beyond the roles
+                            you have carried and make space for the
+                            woman you are becoming.
+                        </p>
+
+                    </div>
+
+
+                    <div class="becoming-product-layout">
+
+                        <article class="product-card becoming-product">
+
+                            <div class="product-image-container">
+
+                                <img
+                                    src="images/becoming-yourself-product.png"
+                                    alt="Becoming Yourself guide cover featuring three women"
+                                    class="product-image"
+                                    loading="lazy"
+                                >
+
+                            </div>
+
+                            <div class="product-content">
+
+                                <p class="product-type">
+                                    Digital Self-Discovery Guide
+                                </p>
+
+                                <h3>
+                                    Becoming Yourself
+                                </h3>
+
+                                <p class="product-description">
+                                    A compassionate exploration of identity,
+                                    inner transformation, and the journey
+                                    toward becoming more fully yourself.
+                                    Make space for your own voice, explore
+                                    the roles you have carried, and reconnect
+                                    with the woman you are becoming.
+                                </p>
+
+                                <ul class="product-features">
+                                    <li>Explore identity and personal transformation</li>
+                                    <li>Reflect on patterns and expectations</li>
+                                    <li>Reconnect with your inner voice</li>
+                                    <li>Downloadable digital PDF</li>
+                                </ul>
+
+                                <div class="product-purchase">
+
+                                    <p class="product-price">
+                                        $12.99
+                                    </p>
+
+                                    <a
+                                        href="https://payhip.com/b/2jsL1"
+                                        class="button button-primary product-button"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        Purchase Becoming Yourself
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+
+                <!-- EMBODIMENT -->
+
+                <section
+                    class="journey-panel"
+                    id="panel-embodiment"
+                    data-panel="embodiment"
+                    hidden
+                >
+
+                    <div class="section-heading">
+
+                        <p class="eyebrow">
+                            The choice
+                        </p>
+
+                        <h2>
+                            Embodiment
+                        </h2>
+
+                        <p class="offerings-introduction">
+                            When Knowing Yourself Becomes Choosing Yourself
+                        </p>
+
+                    </div>
+
+
+                    <div class="becoming-product-layout">
+
+                        <article class="product-card becoming-product">
+
+                            <div class="product-image-container">
+
+                                <img
+                                    src="images/EmbodimentGuide.png"
+                                    alt="Embodiment Guide by Shea Melissa"
+                                    class="product-image"
+                                    loading="lazy"
+                                >
+
+                            </div>
+
+                            <div class="product-content">
+
+                                <p class="product-type">
+                                    Digital Personal Growth Guide
+                                </p>
+
+                                <h3>
+                                    Embodiment
+                                </h3>
+
+                                <p class="product-description">
+                                    Knowing yourself is only the beginning.
+                                    Embodiment is where self-awareness
+                                    becomes intentional action, where
+                                    boundaries become choices, and where
+                                    personal growth begins to shape the
+                                    life you actually live.
+                                </p>
+
+                                <p class="product-description">
+                                    Through 12 thoughtfully developed
+                                    chapters and guided reflection
+                                    exercises, explore accountability
+                                    without shame, breaking familiar
+                                    patterns, building self-trust, and
+                                    making choices that honor the person
+                                    you are becoming.
+                                </p>
+
+                                <ul class="product-features">
+                                    <li>Explore choice and accountability</li>
+                                    <li>Recognize and break familiar patterns</li>
+                                    <li>Establish boundaries through action</li>
+                                    <li>Build self-trust through intentional choices</li>
+                                    <li>12 chapters with guided reflection exercises</li>
+                                    <li>16-page downloadable digital PDF</li>
+                                </ul>
+
+                                <div class="product-purchase">
+
+                                    <p class="product-price">
+                                        $12.99
+                                    </p>
+
+                                    <a
+                                        href="https://payhip.com/b/2xu9H"
+                                        class="button button-primary product-button"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        Purchase Embodiment
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+
+                <!-- INTEGRATION -->
+
+                <section
+                    class="journey-panel"
+                    id="panel-integration"
+                    data-panel="integration"
+                    hidden
+                >
+
+                    <div class="section-heading">
+
+                        <p class="eyebrow">
+                            The alignment
+                        </p>
+
+                        <h2>
+                            Integration
+                        </h2>
+
+                        <p class="offerings-introduction">
+                            A future chapter in the Continuum Divinity
+                            journey, exploring how the lessons we learn
+                            become part of the lives we choose to live.
+                        </p>
+
+                        <p class="coming-soon-message">
+                            ✦ Coming Soon ✦
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+                <!-- RETURN AGAIN -->
+
+                <section
+                    class="journey-panel"
+                    id="panel-return-again"
+                    data-panel="return-again"
+                    hidden
+                >
+
+                    <div class="section-heading">
+
+                        <p class="eyebrow">
+                            The continuation
+                        </p>
+
+                        <h2>
+                            Return Again
+                        </h2>
+
+                        <p class="offerings-introduction">
+                            Every new chapter brings another opportunity
+                            to reconnect with yourself. Transformation
+                            continues, and each return carries a deeper
+                            understanding of who you have become.
+                        </p>
+
+                        <p class="coming-soon-message">
+                            ✦ Coming Soon ✦
+                        </p>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+            <!-- ==================== JOURNEY NAVIGATION ==================== -->
+
+<div class="journey-navigation">
+
+    <button
+        type="button"
+        id="previousGuide"
+        class="button button-secondary journey-nav-button"
+    >
+        ← Previous
+    </button>
+
+    <button
+        type="button"
+        id="returnToWheel"
+        class="button button-primary journey-nav-button"
+    >
+        ✦ Return to Wheel
+    </button>
+
+    <button
+        type="button"
+        id="nextGuide"
+        class="button button-secondary journey-nav-button"
+    >
+        Next →
+    </button>
+
+</div>
+
             <p class="digital-product-notice">
-                Becoming Yourself is sold separately from the Return to Yourself
-                collection. Your digital PDF is delivered through Payhip.
+                All available products are digital downloads.
+                No physical products will be mailed.
+                Purchases are securely processed and delivered through Payhip.
             </p>
+
         </section>
 
+
+        <!-- ==================== ABOUT ==================== -->
+
         <section class="about-section" id="about">
+
             <div class="about-content">
-                <p class="eyebrow">The heart of Continuum Divinity</p>
-                <h2>Created from lived transformation</h2>
+
+                <p class="eyebrow">
+                    The heart of Continuum Divinity
+                </p>
+
+                <h2>
+                    Created from lived transformation
+                </h2>
 
                 <p>
                     Continuum Divinity was created as a place where real
-                    experiences become pathways toward healing. It honors the
-                    strength required to survive while making space for something
-                    greater: the freedom to live as your fullest, most authentic
-                    self.
+                    experiences become pathways toward healing. It honors
+                    the strength required to survive while making space
+                    for something greater: the freedom to live as your
+                    fullest, most authentic self.
                 </p>
+
             </div>
+
         </section>
 
+
+        <!-- ==================== CONTACT ==================== -->
+
         <section class="contact-section" id="contact">
+
             <div class="section-heading">
-                <p class="eyebrow">Stay connected</p>
-                <h2>Your return to yourself has already begun.</h2>
+
+                <p class="eyebrow">
+                    Stay connected
+                </p>
+
+                <h2>
+                    Your return to yourself has already begun.
+                </h2>
 
                 <p class="contact-introduction">
-                    Connect with Continuum Divinity through email, phone, or GitHub.
+                    Connect with Continuum Divinity through email,
+                    phone, or GitHub.
                 </p>
+
             </div>
 
+
             <div class="contact-grid">
+
+                <!-- EMAIL -->
+
                 <a
                     href="mailto:Shea_melissa89@yahoo.com"
                     class="contact-card"
                     aria-label="Email Continuum Divinity"
                 >
+
                     <span class="contact-icon">✉</span>
-                    <span class="contact-label">Email</span>
+
+                    <span class="contact-label">
+                        Email
+                    </span>
+
                     <span class="contact-detail">
                         Shea_melissa89@yahoo.com
                     </span>
+
                 </a>
+
+
+                <!-- PHONE -->
 
                 <a
                     href="tel:+19168806720"
                     class="contact-card"
-                    aria-label="Call Continuum Divinity"
+                    aria-label="Call or text Continuum Divinity"
                 >
+
                     <span class="contact-icon">☎</span>
-                    <span class="contact-label">Call or Text</span>
+
+                    <span class="contact-label">
+                        Call or Text
+                    </span>
+
                     <span class="contact-detail">
                         (916) 880-6720
                     </span>
+
                 </a>
+
+
+                <!-- GITHUB -->
 
                 <a
                     href="https://github.com/Sheamelissa89"
@@ -357,24 +959,46 @@
                     rel="noopener noreferrer"
                     aria-label="Visit Shea's GitHub profile"
                 >
-                    <span class="contact-icon">&lt;/&gt;</span>
-                    <span class="contact-label">GitHub</span>
+
+                    <span class="contact-icon">
+                        &lt;/&gt;
+                    </span>
+
+                    <span class="contact-label">
+                        GitHub
+                    </span>
+
                     <span class="contact-detail">
                         github.com/Sheamelissa89
                     </span>
+
                 </a>
+
             </div>
+
         </section>
+
     </main>
 
+
+    <!-- ==================== FOOTER ==================== -->
+
     <footer class="site-footer">
+
         <p>
-            &copy; <span id="currentYear"></span> Continuum Divinity.
+            &copy;
+            <span id="currentYear"></span>
+            Continuum Divinity.
             All rights reserved.
         </p>
+
     </footer>
 
-    <script src="script.js"></script>
-</body>
-</html>
 
+    <!-- ==================== JAVASCRIPT ==================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

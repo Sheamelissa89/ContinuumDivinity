@@ -1,6 +1,13 @@
+/* ==========================================================
+   CONTINUUM DIVINITY
+   Complete Website Stylesheet
+   ========================================================== */
+
+
 /* ---------- Fonts ---------- */
 
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap");
+
 
 /* ---------- Global Styles ---------- */
 
@@ -60,7 +67,14 @@ section {
     scroll-margin-top: 85px;
 }
 
-/* ---------- Navigation ---------- */
+[hidden] {
+    display: none !important;
+}
+
+
+/* ==========================================================
+   NAVIGATION
+   ========================================================== */
 
 .site-header {
     position: fixed;
@@ -140,7 +154,10 @@ section {
     font-size: 1.8rem;
 }
 
-/* ---------- Hero ---------- */
+
+/* ==========================================================
+   HERO
+   ========================================================== */
 
 .hero {
     position: relative;
@@ -163,7 +180,12 @@ section {
             rgba(215, 182, 111, 0.15),
             transparent 30%
         ),
-        linear-gradient(135deg, #090718 0%, #21133d 52%, #0d0a20 100%);
+        linear-gradient(
+            135deg,
+            #090718 0%,
+            #21133d 52%,
+            #0d0a20 100%
+        );
 }
 
 .hero::before {
@@ -172,7 +194,11 @@ section {
     inset: 0;
     opacity: 0.32;
     background-image:
-        radial-gradient(circle, rgba(255, 255, 255, 0.8) 1px, transparent 1px);
+        radial-gradient(
+            circle,
+            rgba(255, 255, 255, 0.8) 1px,
+            transparent 1px
+        );
     background-size: 52px 52px;
     content: "";
 }
@@ -240,7 +266,10 @@ section {
     gap: 1rem;
 }
 
-/* ---------- Buttons ---------- */
+
+/* ==========================================================
+   BUTTONS
+   ========================================================== */
 
 .button {
     min-width: 195px;
@@ -250,11 +279,13 @@ section {
     justify-content: center;
     border: 1px solid transparent;
     border-radius: 50px;
+    font-family: "Montserrat", sans-serif;
     font-size: 0.78rem;
     font-weight: 600;
     letter-spacing: 0.08em;
     text-align: center;
     text-transform: uppercase;
+    cursor: pointer;
     transition:
         transform 0.3s ease,
         background-color 0.3s ease,
@@ -267,7 +298,11 @@ section {
 }
 
 .button-primary {
-    background: linear-gradient(135deg, var(--gold), var(--light-gold));
+    background: linear-gradient(
+        135deg,
+        var(--gold),
+        var(--light-gold)
+    );
     color: var(--midnight);
     box-shadow: 0 10px 28px rgba(215, 182, 111, 0.22);
 }
@@ -287,7 +322,10 @@ section {
     color: var(--midnight);
 }
 
-/* ---------- Shared Sections ---------- */
+
+/* ==========================================================
+   SHARED SECTIONS
+   ========================================================== */
 
 .intro-section,
 .offerings-section,
@@ -326,7 +364,10 @@ section {
     font-size: 1rem;
 }
 
-/* ---------- Journey Introduction ---------- */
+
+/* ==========================================================
+   JOURNEY INTRODUCTION
+   ========================================================== */
 
 .intro-section {
     background:
@@ -352,11 +393,335 @@ section {
     content: "";
 }
 
-/* ---------- Return to Yourself Collection ---------- */
 
-.offerings-section {
-    background: linear-gradient(180deg, #0c091e 0%, #17102d 100%);
+/* ==========================================================
+   THE CONTINUUM OF BECOMING
+   ========================================================== */
+
+.continuum-section {
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(105, 61, 151, 0.22),
+            transparent 48%
+        ),
+        linear-gradient(
+            180deg,
+            #0c091e 0%,
+            #17102d 55%,
+            #0c091e 100%
+        );
 }
+
+.continuum-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 4rem auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.continuum-circle {
+    position: relative;
+    width: min(780px, 100%);
+    aspect-ratio: 1 / 1;
+    isolation: isolate;
+}
+
+
+/* ---------- Rotating Celestial Rings ---------- */
+
+.celestial-ring {
+    position: absolute;
+    pointer-events: none;
+    border-radius: 50%;
+    animation: celestialRotation 90s linear infinite;
+}
+
+.celestial-ring-outer {
+    inset: 15%;
+    border: 2px solid rgba(215, 182, 111, 0.55);
+    background:
+        repeating-conic-gradient(
+            from 0deg,
+            rgba(215, 182, 111, 0.5) 0deg 1deg,
+            transparent 1deg 30deg
+        );
+    box-shadow:
+        0 0 45px rgba(215, 182, 111, 0.12),
+        inset 0 0 45px rgba(215, 182, 111, 0.08);
+}
+
+.celestial-ring-outer::before {
+    position: absolute;
+    inset: 12px;
+    border: 1px solid rgba(241, 221, 168, 0.45);
+    border-radius: 50%;
+    content: "";
+}
+
+.celestial-ring-outer::after {
+    position: absolute;
+    inset: -12px;
+    border: 1px dashed rgba(215, 182, 111, 0.35);
+    border-radius: 50%;
+    content: "";
+}
+
+.celestial-ring-inner {
+    inset: 29%;
+    border: 1px solid rgba(215, 182, 111, 0.45);
+    background:
+        repeating-conic-gradient(
+            from 15deg,
+            rgba(241, 221, 168, 0.25) 0deg 2deg,
+            transparent 2deg 45deg
+        );
+    animation-direction: reverse;
+    animation-duration: 120s;
+}
+
+@keyframes celestialRotation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* ---------- Center Emblem ---------- */
+
+.continuum-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    width: 32%;
+    aspect-ratio: 1 / 1;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(215, 182, 111, 0.65);
+    border-radius: 50%;
+    background:
+        radial-gradient(
+            circle,
+            rgba(74, 45, 115, 0.95),
+            rgba(9, 7, 24, 0.98)
+        );
+    box-shadow:
+        0 0 35px rgba(215, 182, 111, 0.18),
+        inset 0 0 25px rgba(215, 182, 111, 0.1);
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+.continuum-center h3 {
+    color: var(--light-gold);
+    font-size: clamp(1.1rem, 2.6vw, 2rem);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.06em;
+}
+
+.continuum-center p {
+    margin-top: 0.6rem;
+    color: var(--soft-white);
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(0.75rem, 1.5vw, 1.15rem);
+    line-height: 1.15;
+}
+
+.center-symbol {
+    color: var(--gold);
+    font-size: 1.3rem;
+    line-height: 1.2;
+}
+
+
+/* ---------- Journey Nodes ---------- */
+
+.journey-node {
+    position: absolute;
+    z-index: 5;
+    width: 19%;
+    min-width: 0;
+    padding: 0.55rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    border: 1px solid rgba(215, 182, 111, 0.4);
+    border-radius: 18px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(35, 20, 60, 0.98),
+            rgba(9, 7, 24, 0.98)
+        );
+    color: var(--cream);
+    font-family: "Montserrat", sans-serif;
+    cursor: pointer;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+    transform: translate(-50%, -50%);
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.journey-node:hover,
+.journey-node:focus-visible {
+    border-color: var(--light-gold);
+    box-shadow:
+        0 0 22px rgba(215, 182, 111, 0.3),
+        0 12px 28px rgba(0, 0, 0, 0.4);
+}
+
+.journey-node.active {
+    border-color: var(--light-gold);
+    box-shadow:
+        0 0 30px rgba(215, 182, 111, 0.42),
+        0 12px 28px rgba(0, 0, 0, 0.4);
+}
+
+.journey-node img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    display: block;
+    border-radius: 10px;
+    object-fit: contain;
+}
+
+.journey-node-title {
+    color: var(--light-gold);
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(0.8rem, 1.8vw, 1.25rem);
+    font-weight: 600;
+    line-height: 1.05;
+    text-align: center;
+}
+
+.journey-placeholder {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background:
+        radial-gradient(
+            circle,
+            rgba(215, 182, 111, 0.14),
+            rgba(74, 45, 115, 0.3)
+        );
+    color: var(--gold);
+    font-size: clamp(2rem, 5vw, 4rem);
+}
+
+.coming-soon-label {
+    color: var(--lavender);
+    font-size: clamp(0.5rem, 1vw, 0.7rem);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+
+/* ---------- Clock Positions ---------- */
+
+.node-return {
+    top: 10%;
+    left: 50%;
+}
+
+.node-becoming {
+    top: 33%;
+    left: 88%;
+}
+
+.node-embodiment {
+    top: 78%;
+    left: 74%;
+}
+
+.node-integration {
+    top: 78%;
+    left: 26%;
+}
+
+.node-return-again {
+    top: 33%;
+    left: 12%;
+}
+
+
+/* ---------- Rotation Controls ---------- */
+
+.continuum-controls {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.rotation-button {
+    min-width: 200px;
+}
+
+.continuum-circle.paused .celestial-ring {
+    animation-play-state: paused;
+}
+
+
+/* ==========================================================
+   JOURNEY INFORMATION PANELS
+   ========================================================== */
+
+.journey-details {
+    width: min(1250px, 100%);
+    margin: 4rem auto 0;
+}
+
+.journey-panel {
+    animation: panelReveal 0.45s ease;
+}
+
+@keyframes panelReveal {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.journey-panel .section-heading {
+    margin-bottom: 2.5rem;
+}
+
+.coming-soon-message {
+    margin-top: 2rem;
+    color: var(--light-gold);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2rem;
+    text-align: center;
+}
+
+
+/* ==========================================================
+   PRODUCT CARDS
+   ========================================================== */
 
 .product-grid {
     width: min(1250px, 100%);
@@ -375,11 +740,12 @@ section {
     overflow: hidden;
     border: 1px solid rgba(215, 182, 111, 0.25);
     border-radius: 24px;
-    background: linear-gradient(
-        145deg,
-        rgba(255, 255, 255, 0.075),
-        rgba(255, 255, 255, 0.025)
-    );
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.075),
+            rgba(255, 255, 255, 0.025)
+        );
     box-shadow: var(--shadow);
     transition:
         transform 0.35s ease,
@@ -407,13 +773,17 @@ section {
     z-index: 3;
     padding: 0.45rem 0.85rem;
     border-radius: 50px;
-    background: linear-gradient(135deg, var(--gold), var(--light-gold));
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold),
+            var(--light-gold)
+        );
     color: var(--midnight);
     font-size: 0.68rem;
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
 .product-image-container {
@@ -524,22 +894,10 @@ section {
     text-align: center;
 }
 
-/* ---------- Becoming Yourself ---------- */
 
-.becoming-section {
-    border-top: 1px solid rgba(215, 182, 111, 0.22);
-    background:
-        radial-gradient(
-            circle at 20% 45%,
-            rgba(151, 105, 197, 0.18),
-            transparent 45%
-        ),
-        linear-gradient(180deg, #17102d 0%, #0c091e 100%);
-}
-
-.becoming-section .eyebrow {
-    color: var(--light-gold);
-}
+/* ==========================================================
+   FEATURED GUIDE LAYOUTS
+   ========================================================== */
 
 .becoming-product-layout {
     width: min(1100px, 100%);
@@ -589,7 +947,10 @@ section {
     max-width: 380px;
 }
 
-/* ---------- About ---------- */
+
+/* ==========================================================
+   ABOUT
+   ========================================================== */
 
 .about-section {
     display: flex;
@@ -621,7 +982,10 @@ section {
     font-size: 1.05rem;
 }
 
-/* ---------- Contact ---------- */
+
+/* ==========================================================
+   CONTACT
+   ========================================================== */
 
 .contact-section {
     min-height: 480px;
@@ -657,22 +1021,21 @@ section {
     justify-content: center;
     border: 1px solid rgba(215, 182, 111, 0.28);
     border-radius: 22px;
-    background: linear-gradient(
-        145deg,
-        rgba(255, 255, 255, 0.08),
-        rgba(255, 255, 255, 0.025)
-    );
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.08),
+            rgba(255, 255, 255, 0.025)
+        );
     box-shadow: var(--shadow);
     transition:
         transform 0.35s ease,
-        border-color 0.35s ease,
-        background-color 0.35s ease;
+        border-color 0.35s ease;
 }
 
 .contact-card:hover {
     transform: translateY(-7px);
     border-color: var(--gold);
-    background-color: rgba(215, 182, 111, 0.08);
 }
 
 .contact-icon {
@@ -699,7 +1062,10 @@ section {
     overflow-wrap: anywhere;
 }
 
-/* ---------- Footer ---------- */
+
+/* ==========================================================
+   FOOTER
+   ========================================================== */
 
 .site-footer {
     padding: 2rem 7%;
@@ -711,7 +1077,10 @@ section {
     text-align: center;
 }
 
-/* ---------- Smaller Screens ---------- */
+
+/* ==========================================================
+   RESPONSIVE DESIGN
+   ========================================================== */
 
 @media (max-width: 1000px) {
     .product-grid {
@@ -809,6 +1178,79 @@ section {
         padding: 5rem 6%;
     }
 
+    .continuum-container {
+        margin-top: 3rem;
+    }
+
+    .continuum-circle {
+        width: 100%;
+    }
+
+    .journey-node {
+        width: 24%;
+        padding: 0.3rem;
+        border-radius: 12px;
+        gap: 0.2rem;
+    }
+
+    .journey-node img,
+    .journey-placeholder {
+        border-radius: 7px;
+    }
+
+    .journey-node-title {
+        font-size: clamp(0.65rem, 2.5vw, 0.85rem);
+    }
+
+    .coming-soon-label {
+        font-size: 0.48rem;
+    }
+
+    .continuum-center {
+        width: 34%;
+        padding: 0.35rem;
+    }
+
+    .continuum-center h3 {
+        font-size: clamp(0.7rem, 3vw, 1rem);
+    }
+
+    .continuum-center p {
+        font-size: 0.6rem;
+    }
+
+    .center-symbol {
+        font-size: 0.8rem;
+    }
+
+    .node-return {
+        top: 11%;
+    }
+
+    .node-becoming {
+        top: 34%;
+        left: 86%;
+    }
+
+    .node-embodiment {
+        top: 77%;
+        left: 72%;
+    }
+
+    .node-integration {
+        top: 77%;
+        left: 28%;
+    }
+
+    .node-return-again {
+        top: 34%;
+        left: 14%;
+    }
+
+    .journey-details {
+        margin-top: 3rem;
+    }
+
     .product-grid,
     .becoming-product-layout {
         margin-top: 2.5rem;
@@ -836,11 +1278,22 @@ section {
     }
 }
 
-/* ---------- Reduced Motion ---------- */
+
+/* ==========================================================
+   REDUCED MOTION ACCESSIBILITY
+   ========================================================== */
 
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
+    }
+
+    .celestial-ring {
+        animation: none !important;
+    }
+
+    .journey-panel {
+        animation: none !important;
     }
 
     *,
@@ -848,4 +1301,48 @@ section {
     *::after {
         transition-duration: 0.01ms !important;
     }
+}
+/* ==========================================================
+   JOURNEY NAVIGATION BUTTONS
+   ========================================================== */
+
+.journey-navigation {
+    width: min(850px, 100%);
+    margin: 3rem auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+}
+
+.journey-nav-button {
+    min-width: 190px;
+    padding: 1rem 1.5rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+}
+
+#returnToWheel {
+    border-color: var(--gold);
+    box-shadow: 0 0 20px rgba(215, 182, 111, 0.2);
+}
+
+#returnToWheel:hover {
+    box-shadow: 0 0 30px rgba(215, 182, 111, 0.4);
+}
+
+/* Mobile responsiveness */
+
+@media (max-width: 600px) {
+
+    .journey-navigation {
+        flex-direction: column;
+        gap: 0.9rem;
+    }
+
+    .journey-nav-button {
+        width: min(320px, 100%);
+    }
+
 }

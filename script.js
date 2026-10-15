@@ -8,76 +8,50 @@
    MOBILE NAVIGATION
    ========================================================== */
 
-// Select the mobile navigation elements
 const menuButton = document.getElementById("menuButton");
 const navLinks = document.getElementById("navLinks");
 
-// Open and close the mobile navigation menu
-if (menuButton && navLinks) {
+function setMenu(open) {
+    if (!menuButton || !navLinks) {
+        return;
+    }
 
-    menuButton.addEventListener("click", () => {
+    navLinks.classList.toggle("active", open);
 
-        const menuIsOpen = navLinks.classList.toggle("active");
+    menuButton.setAttribute("aria-expanded", String(open));
 
-        menuButton.setAttribute(
-            "aria-expanded",
-            menuIsOpen ? "true" : "false"
-        );
+    menuButton.setAttribute(
+        "aria-label",
+        open ? "Close navigation menu" : "Open navigation menu"
+    );
 
-        menuButton.textContent = menuIsOpen ? "✕" : "☰";
-
-        menuButton.setAttribute(
-            "aria-label",
-            menuIsOpen
-                ? "Close navigation menu"
-                : "Open navigation menu"
-        );
-
-    });
-
-
-    // Close the mobile menu after selecting a navigation link
-    navLinks.querySelectorAll("a").forEach((link) => {
-
-        link.addEventListener("click", () => {
-
-            navLinks.classList.remove("active");
-
-            menuButton.setAttribute("aria-expanded", "false");
-
-            menuButton.setAttribute(
-                "aria-label",
-                "Open navigation menu"
-            );
-
-            menuButton.textContent = "☰";
-
-        });
-
-    });
-
-
-    // Close the mobile menu when the screen becomes wider
-    window.addEventListener("resize", () => {
-
-        if (window.innerWidth > 900) {
-
-            navLinks.classList.remove("active");
-
-            menuButton.setAttribute("aria-expanded", "false");
-
-            menuButton.setAttribute(
-                "aria-label",
-                "Open navigation menu"
-            );
-
-            menuButton.textContent = "☰";
-
-        }
-
-    });
-
+    menuButton.textContent = open ? "✕" : "☰";
 }
+
+if (menuButton && navLinks) {
+    menuButton.addEventListener("click", () => {
+        const menuIsOpen = navLinks.classList.contains("active");
+        setMenu(!menuIsOpen);
+    });
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+            setMenu(false);
+        });
+    });
+}
+
+window.addEventListener("resize", () => {
+    if (window.innerWidth > 900) {
+        setMenu(false);
+    }
+});
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+        setMenu(false);
+    }
+});
 
 
 /* ==========================================================
@@ -87,218 +61,32 @@ if (menuButton && navLinks) {
 const currentYear = document.getElementById("currentYear");
 
 if (currentYear) {
-
     currentYear.textContent = new Date().getFullYear();
-
 }
 
 
 /* ==========================================================
-   THE CONTINUUM OF BECOMING
-   GUIDE SELECTION
+   JOURNEY ELEMENTS AND STAGE ORDER
    ========================================================== */
 
-// Select all five guide buttons
-const journeyNodes = document.querySelectorAll(".journey-node");
+const journeyNodes = [
+    ...document.querySelectorAll(".journey-node")
+];
 
-// Select the corresponding information panels
-const journeyPanels = document.querySelectorAll(".journey-panel");
-
+const journeyPanels = [
+    ...document.querySelectorAll(".journey-panel")
+];
 
 /*
-   Each guide button has a data-guide attribute.
+   These internal names match the HTML data attributes.
 
-   Example:
-   data-guide="embodiment"
-
-   Each information panel has a matching data-panel attribute.
-
-   Example:
-   data-panel="embodiment"
-
-   This allows JavaScript to connect each guide
-   with its corresponding information.
+   return       = I See
+   becoming     = I Choose
+   embodiment   = I Embody
+   integration  = I Integrate
+   return-again = I Am Becoming
 */
 
-
-function selectJourneyGuide(guideName) {
-
-    // Update the selected guide button
-    journeyNodes.forEach((node) => {
-
-        const isSelected = node.dataset.guide === guideName;
-
-        node.classList.toggle("active", isSelected);
-
-        node.setAttribute(
-            "aria-pressed",
-            isSelected ? "true" : "false"
-        );
-
-    });
-
-
-    // Show the selected information panel
-    journeyPanels.forEach((panel) => {
-
-        const isSelected = panel.dataset.panel === guideName;
-
-        panel.hidden = !isSelected;
-
-        panel.classList.toggle("active", isSelected);
-
-    });
-
-}
-
-
-// Add click functionality to each guide
-journeyNodes.forEach((node) => {
-
-    node.addEventListener("click", () => {
-
-        const selectedGuide = node.dataset.guide;
-
-        // Display the selected guide's information
-        selectJourneyGuide(selectedGuide);
-
-        // Find the corresponding information panel
-        const selectedPanel = document.querySelector(
-            `.journey-panel[data-panel="${selectedGuide}"]`
-        );
-
-        // Automatically scroll to the selected guide
-        if (selectedPanel) {
-
-            const prefersReducedMotion = window.matchMedia(
-                "(prefers-reduced-motion: reduce)"
-            ).matches;
-
-            selectedPanel.scrollIntoView({
-                behavior: prefersReducedMotion ? "instant" : "smooth",
-                block: "start"
-            });
-
-        }
-
-    });
-
-});
-
-
-/* ==========================================================
-   CELESTIAL ROTATION CONTROLS
-   ========================================================== */
-
-// Select the circle and pause button
-const continuumCircle = document.getElementById("continuumCircle");
-
-const rotationToggle = document.getElementById("rotationToggle");
-
-
-// Detect whether the visitor prefers reduced motion
-const reducedMotionPreference = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
-);
-
-
-// Track whether the visitor has paused the animation
-let rotationPaused = reducedMotionPreference.matches;
-
-
-// Update the appearance of the rotation button
-function updateRotationButton() {
-
-    if (!continuumCircle || !rotationToggle) {
-        return;
-    }
-
-    continuumCircle.classList.toggle(
-        "paused",
-        rotationPaused
-    );
-
-    rotationToggle.textContent = rotationPaused
-        ? "Resume Rotation"
-        : "Pause Rotation";
-
-    rotationToggle.setAttribute(
-        "aria-pressed",
-        rotationPaused ? "true" : "false"
-    );
-
-}
-
-
-// Pause or resume when the visitor clicks the button
-if (continuumCircle && rotationToggle) {
-
-    rotationToggle.addEventListener("click", () => {
-
-        rotationPaused = !rotationPaused;
-
-        updateRotationButton();
-
-    });
-
-}
-
-
-/* ==========================================================
-   REDUCED MOTION ACCESSIBILITY
-   ========================================================== */
-
-// Respond when the visitor changes their system motion preference
-function handleMotionPreferenceChange(event) {
-
-    rotationPaused = event.matches;
-
-    updateRotationButton();
-
-}
-
-
-// Modern browsers support addEventListener on MediaQueryList
-if (typeof reducedMotionPreference.addEventListener === "function") {
-
-    reducedMotionPreference.addEventListener(
-        "change",
-        handleMotionPreferenceChange
-    );
-
-} else if (
-    typeof reducedMotionPreference.addListener === "function"
-) {
-
-    // Compatibility for older browsers
-    reducedMotionPreference.addListener(
-        handleMotionPreferenceChange
-    );
-
-}
-
-
-/* ==========================================================
-   INITIALIZE THE CELESTIAL CIRCLE
-   ========================================================== */
-
-// Start with Return to Yourself selected
-if (journeyNodes.length > 0 && journeyPanels.length > 0) {
-
-    selectJourneyGuide("return");
-
-}
-
-
-// Set the initial rotation state
-updateRotationButton();
-
-/* ==========================================================
-   JOURNEY NAVIGATION
-   PREVIOUS / NEXT / RETURN TO WHEEL
-   ========================================================== */
-
-// Guides arranged in clockwise order
 const guideOrder = [
     "return",
     "becoming",
@@ -307,106 +95,214 @@ const guideOrder = [
     "return-again"
 ];
 
-// Navigation buttons
-const previousGuideButton = document.getElementById("previousGuide");
-const nextGuideButton = document.getElementById("nextGuide");
-const returnToWheelButton = document.getElementById("returnToWheel");
+const motionPreference = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+);
 
-// Find the currently selected guide
+
+/* ==========================================================
+   SCROLLING
+   ========================================================== */
+
+function scrollToElement(element, block = "start") {
+    if (!element) {
+        return;
+    }
+
+    element.scrollIntoView({
+        behavior: motionPreference.matches ? "auto" : "smooth",
+        block: block
+    });
+}
+
+
+/* ==========================================================
+   SELECT A GUIDE
+   ========================================================== */
+
+function selectJourneyGuide(guideName, shouldScroll = false) {
+    const selectedPanel = journeyPanels.find((panel) => {
+        return panel.dataset.panel === guideName;
+    });
+
+    if (!selectedPanel) {
+        return;
+    }
+
+    // Highlight the corresponding wheel button.
+    journeyNodes.forEach((node) => {
+        const isSelected = node.dataset.guide === guideName;
+
+        node.classList.toggle("active", isSelected);
+
+        node.setAttribute(
+            "aria-pressed",
+            String(isSelected)
+        );
+    });
+
+    // Show only the corresponding product panel.
+    journeyPanels.forEach((panel) => {
+        const isSelected = panel === selectedPanel;
+
+        panel.hidden = !isSelected;
+        panel.classList.toggle("active", isSelected);
+    });
+
+    if (shouldScroll) {
+        scrollToElement(selectedPanel);
+    }
+}
+
+// Selecting a wheel button displays and scrolls to its guide.
+journeyNodes.forEach((node) => {
+    node.addEventListener("click", () => {
+        selectJourneyGuide(node.dataset.guide, true);
+    });
+});
+
+
+/* ==========================================================
+   PREVIOUS / NEXT GUIDE
+   ========================================================== */
+
 function getCurrentGuideIndex() {
+    const activeNode = document.querySelector(
+        ".journey-node.active"
+    );
 
-    const activeNode = document.querySelector(".journey-node.active");
+    const index = guideOrder.indexOf(
+        activeNode ? activeNode.dataset.guide : "return"
+    );
 
-    if (!activeNode) {
-        return 0;
-    }
-
-    return guideOrder.indexOf(activeNode.dataset.guide);
-
+    return Math.max(0, index);
 }
 
-// Smoothly scroll to the selected guide's details
-function scrollToGuideDetails() {
-
-    const activePanel = document.querySelector(".journey-panel.active");
-
-    if (activePanel) {
-
-        const prefersReducedMotion = window.matchMedia(
-            "(prefers-reduced-motion: reduce)"
-        ).matches;
-
-        activePanel.scrollIntoView({
-            behavior: prefersReducedMotion ? "auto" : "smooth",
-            block: "start"
-        });
-
-    }
-
-}
-
-// Navigate to another guide
 function navigateToGuide(direction) {
-
     const currentIndex = getCurrentGuideIndex();
 
-    // Wrap around when reaching either end of the circle
+    // Wrap around at either end of the five-stage journey.
     const nextIndex = (
         currentIndex + direction + guideOrder.length
     ) % guideOrder.length;
 
-    const nextGuide = guideOrder[nextIndex];
-
-    // Use our existing guide-selection function
-    selectJourneyGuide(nextGuide);
-
-    // Scroll to the new guide's information
-    scrollToGuideDetails();
-
+    selectJourneyGuide(guideOrder[nextIndex], true);
 }
 
-// Previous guide
+const previousGuideButton = document.getElementById(
+    "previousGuide"
+);
+
+const nextGuideButton = document.getElementById(
+    "nextGuide"
+);
+
 if (previousGuideButton) {
-
     previousGuideButton.addEventListener("click", () => {
-
         navigateToGuide(-1);
-
     });
-
 }
 
-// Next guide
 if (nextGuideButton) {
-
     nextGuideButton.addEventListener("click", () => {
-
         navigateToGuide(1);
-
     });
-
 }
 
-// Return to the celestial wheel
+
+/* ==========================================================
+   RETURN TO WHEEL
+   ========================================================== */
+
+const returnToWheelButton = document.getElementById(
+    "returnToWheel"
+);
+
+const continuumCircle = document.getElementById(
+    "continuumCircle"
+);
+
 if (returnToWheelButton) {
-
     returnToWheelButton.addEventListener("click", () => {
-
-        const wheel = document.getElementById("continuumCircle");
-
-        if (wheel) {
-
-            const prefersReducedMotion = window.matchMedia(
-                "(prefers-reduced-motion: reduce)"
-            ).matches;
-
-            wheel.scrollIntoView({
-                behavior: prefersReducedMotion ? "auto" : "smooth",
-                block: "center"
-            });
-
-        }
-
+        scrollToElement(continuumCircle, "center");
     });
-
 }
+
+
+/* ==========================================================
+   CELESTIAL ROTATION
+   ========================================================== */
+
+const rotationToggle = document.getElementById(
+    "rotationToggle"
+);
+
+let rotationPaused = motionPreference.matches;
+
+function updateRotationButton() {
+    if (continuumCircle) {
+        continuumCircle.classList.toggle(
+            "paused",
+            rotationPaused
+        );
+    }
+
+    if (!rotationToggle) {
+        return;
+    }
+
+    rotationToggle.setAttribute(
+        "aria-pressed",
+        String(rotationPaused)
+    );
+
+    // Respect the visitor's system reduced-motion preference.
+    rotationToggle.disabled = motionPreference.matches;
+
+    if (motionPreference.matches) {
+        rotationToggle.textContent = "Rotation off · Reduced motion";
+    } else {
+        rotationToggle.textContent = rotationPaused
+            ? "Resume Rotation"
+            : "Pause Rotation";
+    }
+}
+
+if (rotationToggle) {
+    rotationToggle.addEventListener("click", () => {
+        rotationPaused = !rotationPaused;
+        updateRotationButton();
+    });
+}
+
+
+/* ==========================================================
+   RESPOND TO SYSTEM MOTION CHANGES
+   ========================================================== */
+
+function handleMotionPreferenceChange(event) {
+    rotationPaused = event.matches;
+    updateRotationButton();
+}
+
+if (typeof motionPreference.addEventListener === "function") {
+    motionPreference.addEventListener(
+        "change",
+        handleMotionPreferenceChange
+    );
+} else if (typeof motionPreference.addListener === "function") {
+    motionPreference.addListener(
+        handleMotionPreferenceChange
+    );
+}
+
+
+/* ==========================================================
+   INITIALIZE
+   ========================================================== */
+
+// Display I See first without automatically scrolling.
+selectJourneyGuide("return");
+
+// Apply the initial rotation preference.
+updateRotationButton();

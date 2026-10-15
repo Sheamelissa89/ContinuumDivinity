@@ -6,18 +6,20 @@
 
     <meta
         name="description"
-        content="Continuum Divinity is a space for spiritual growth, healing, self-discovery, and reclaiming your personal power."
+        content="Explore Return to Yourself by Shea Melissa: five combined guides and workbooks for awareness, discernment, embodiment, integration, and transformation."
     >
 
-    <title>Continuum Divinity</title>
+    <title>Continuum Divinity | Return to Yourself</title>
+
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
 
-    <!-- ==================== NAVIGATION ==================== -->
+    <!-- NAVIGATION -->
     <header class="site-header">
-        <nav class="navbar">
+        <nav class="navbar" aria-label="Main navigation">
 
             <a href="#home" class="logo">
                 Continuum Divinity
@@ -28,6 +30,7 @@
                 id="menuButton"
                 type="button"
                 aria-label="Open navigation menu"
+                aria-controls="navLinks"
                 aria-expanded="false"
             >
                 ☰
@@ -37,6 +40,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#journey">The Journey</a></li>
                 <li><a href="#offerings">Offerings</a></li>
+                <li><a href="#complete-collection">Collection</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Connect</a></li>
             </ul>
@@ -46,9 +50,9 @@
 
     <main>
 
-        <!-- ==================== HERO ==================== -->
+        <!-- HERO -->
         <section class="hero" id="home">
-            <div class="hero-overlay"></div>
+            <div class="hero-overlay" aria-hidden="true"></div>
 
             <div class="hero-content">
 
@@ -79,7 +83,7 @@
             </div>
         </section>
 
-        <!-- ==================== JOURNEY INTRODUCTION ==================== -->
+        <!-- JOURNEY INTRODUCTION -->
         <section class="intro-section" id="journey">
 
             <div class="section-heading">
@@ -101,8 +105,11 @@
 
         </section>
 
-        <!-- ==================== THE CONTINUUM OF BECOMING ==================== -->
-        <section class="offerings-section continuum-section" id="offerings">
+        <!-- THE CONTINUUM OF BECOMING -->
+        <section
+            class="offerings-section continuum-section"
+            id="offerings"
+        >
 
             <div class="section-heading">
                 <p class="eyebrow">
@@ -115,17 +122,20 @@
 
                 <p class="offerings-introduction">
                     Every ending is a return. Every return is a new beginning.
-                    Explore the stages of transformation and discover the
-                    guidance that speaks to where you are in your journey.
+                    Explore five stages of self-discovery and discover the
+                    guidance that speaks to where you are.
                 </p>
             </div>
-
-            <!-- ==================== SACRED INFINITY FLOWER ==================== -->
+                        <p class="journey-orientation">
+                Begin with <strong>I See — Awareness</strong>, or choose
+                the stage that speaks to where you are today.
+                Every volume includes both guidance and workbook reflections.
+            </p>
+            <!-- SACRED INFINITY FLOWER -->
             <div class="continuum-container">
 
                 <div class="continuum-circle" id="continuumCircle">
 
-                    <!-- Four infinity symbols sharing one exact center -->
                     <svg
                         class="celestial-ring sacred-infinity-flower"
                         viewBox="0 0 600 600"
@@ -133,7 +143,6 @@
                         height="100%"
                         aria-hidden="true"
                         focusable="false"
-                        style="inset: 0; display: block; transform-origin: 50% 50%;"
                     >
                         <defs>
                             <linearGradient
@@ -143,12 +152,12 @@
                                 x2="100%"
                                 y2="100%"
                             >
-                                <stop offset="0%" stop-color="#8c7046" />
-                                <stop offset="24%" stop-color="#d4bc8d" />
-                                <stop offset="45%" stop-color="#f5e8ca" />
-                                <stop offset="62%" stop-color="#af905c" />
-                                <stop offset="82%" stop-color="#ead7b0" />
-                                <stop offset="100%" stop-color="#927548" />
+                                <stop offset="0%" stop-color="#8c7046"/>
+                                <stop offset="24%" stop-color="#d4bc8d"/>
+                                <stop offset="45%" stop-color="#f5e8ca"/>
+                                <stop offset="62%" stop-color="#af905c"/>
+                                <stop offset="82%" stop-color="#ead7b0"/>
+                                <stop offset="100%" stop-color="#927548"/>
                             </linearGradient>
 
                             <path
@@ -171,18 +180,15 @@
                             stroke-linecap="round"
                             stroke-linejoin="round"
                         >
-                            <use href="#infinityPetals" />
-
+                            <use href="#infinityPetals"/>
                             <use
                                 href="#infinityPetals"
                                 transform="rotate(45 300 300)"
                             />
-
                             <use
                                 href="#infinityPetals"
                                 transform="rotate(90 300 300)"
                             />
-
                             <use
                                 href="#infinityPetals"
                                 transform="rotate(135 300 300)"
@@ -190,111 +196,121 @@
                         </g>
                     </svg>
 
-                    <!-- GUIDE 1: RETURN TO YOURSELF -->
+                    <!-- STAGE 1 -->
                     <button
                         type="button"
                         class="journey-node node-return active"
                         data-guide="return"
-                        aria-label="Explore Return to Yourself"
+                        aria-label="Explore I See — Awareness"
                         aria-controls="panel-return"
                         aria-pressed="true"
                     >
                         <img
-                            src="images/Guide-product.png"
-                            alt="Return to Yourself guide cover"
+                            src="images/WebsiteISeeImage.png"
+                            alt="I See — Awareness guide and workbook"
                             loading="lazy"
                         >
 
-                        <span class="journey-node-title">
-                            Return to Yourself
-                        </span>
+                        <span class="journey-node-title">I See</span>
+                        <span class="journey-node-stage">Awareness</span>
                     </button>
 
-                    <!-- GUIDE 2: BECOMING YOURSELF -->
+                    <!-- STAGE 2 -->
                     <button
                         type="button"
                         class="journey-node node-becoming"
                         data-guide="becoming"
-                        aria-label="Explore Becoming Yourself"
+                        aria-label="Explore I Choose — Discernment"
                         aria-controls="panel-becoming"
                         aria-pressed="false"
                     >
                         <img
-                            src="images/becoming-yourself-product.png"
-                            alt="Becoming Yourself guide cover"
+                            src="images/WebsiteIchooseimage.png"
+                            alt="I Choose — Discernment guide and workbook"
                             loading="lazy"
                         >
 
-                        <span class="journey-node-title">
-                            Becoming Yourself
-                        </span>
+                        <span class="journey-node-title">I Choose</span>
+                        <span class="journey-node-stage">Discernment</span>
                     </button>
 
-                    <!-- GUIDE 3: EMBODIMENT -->
+                    <!-- STAGE 3 -->
                     <button
                         type="button"
                         class="journey-node node-embodiment"
                         data-guide="embodiment"
-                        aria-label="Explore Embodiment"
+                        aria-label="Explore I Embody — Embodiment"
                         aria-controls="panel-embodiment"
                         aria-pressed="false"
                     >
                         <img
-                            src="images/EmbodimentGuide.png"
-                            alt="Embodiment guide by Shea Melissa"
+                            src="images/WebsiteIembodyimage.png"
+                            alt="I Embody — Embodiment guide and workbook"
                             loading="lazy"
                         >
 
-                        <span class="journey-node-title">
-                            Embodiment
-                        </span>
+                        <span class="journey-node-title">I Embody</span>
+                        <span class="journey-node-stage">Embodiment</span>
                     </button>
 
-                    <!-- GUIDE 4: INTEGRATION -->
+                    <!-- STAGE 4 -->
                     <button
                         type="button"
-                        class="journey-node node-integration coming-soon"
+                        class="journey-node node-integration"
                         data-guide="integration"
-                        aria-label="Explore Integration, coming soon"
+                        aria-label="Explore I Integrate — Integration"
                         aria-controls="panel-integration"
                         aria-pressed="false"
                     >
-                        <span class="journey-placeholder" aria-hidden="true">
-                            ✧
-                        </span>
+                        <img
+                            src="images/websiteiIntegrateimage.png"
+                            alt="I Integrate — Integration guide and workbook"
+                            loading="lazy"
+                        >
 
-                        <span class="journey-node-title">
-                            Integration
-                        </span>
-
-                        <span class="coming-soon-label">
-                            Coming Soon
-                        </span>
+                        <span class="journey-node-title">I Integrate</span>
+                        <span class="journey-node-stage">Integration</span>
                     </button>
 
-                    <!-- GUIDE 5: RETURN AGAIN -->
+                    <!-- STAGE 5 -->
                     <button
                         type="button"
-                        class="journey-node node-return-again coming-soon"
+                        class="journey-node node-return-again"
                         data-guide="return-again"
-                        aria-label="Explore Return Again, coming soon"
+                        aria-label="Explore I Am Becoming — Transformation"
                         aria-controls="panel-return-again"
                         aria-pressed="false"
                     >
-                        <span class="journey-placeholder" aria-hidden="true">
-                            ✧
-                        </span>
+                        <img
+                            src="images/websiteIAmBecomingimage.png"
+                            alt="I Am Becoming — Transformation guide and workbook"
+                            loading="lazy"
+                        >
 
-                        <span class="journey-node-title">
-                            Return Again
-                        </span>
-
-                        <span class="coming-soon-label">
-                            Coming Soon
-                        </span>
+                        <span class="journey-node-title">I Am Becoming</span>
+                        <span class="journey-node-stage">Transformation</span>
                     </button>
+                                        <!-- COMPLETE COLLECTION: WHEEL CENTER -->
+                    <a
+                        href="#complete-collection"
+                        class="wheel-collection"
+                        aria-label="Explore the complete Return to Yourself collection"
+                    >
+                        <img
+                            src="images/websiteCompleteSeriesImage.png"
+                            alt="The complete Return to Yourself collection"
+                            loading="lazy"
+                        >
 
-                </div><!-- END continuum-circle -->
+                        <span class="wheel-collection-title">
+                            Explore the Complete Collection
+                        </span>
+
+                        <span class="wheel-collection-detail">
+                            All five stages
+                        </span>
+                    </a>
+                </div>
 
                 <!-- ROTATION CONTROL -->
                 <div class="continuum-controls">
@@ -308,184 +324,60 @@
                     </button>
                 </div>
 
-            </div><!-- END continuum-container -->
+            </div>
 
-            <!-- ==================== GUIDE INFORMATION PANELS ==================== -->
+            <!-- GUIDE INFORMATION PANELS -->
             <div class="journey-details" id="journeyDetails">
 
-                <!-- RETURN TO YOURSELF -->
+                <!-- I SEE -->
                 <section
                     class="journey-panel active"
                     id="panel-return"
                     data-panel="return"
+                    aria-labelledby="heading-return"
                 >
-                    <div class="section-heading">
-                        <p class="eyebrow">
-                            The beginning and the return
-                        </p>
+                    <div class="becoming-product-layout">
+                        <article class="product-card becoming-product">
 
-                        <h2>
-                            Return to Yourself
-                        </h2>
-
-                        <p class="offerings-introduction">
-                            Reconnect with your truth and make space for your
-                            own voice. Choose the guide, companion workbook,
-                            or complete collection.
-                        </p>
-                    </div>
-
-                    <div class="product-grid">
-
-                        <!-- GUIDE -->
-                        <article class="product-card">
                             <div class="product-image-container">
                                 <img
-                                    src="images/Guide-product.png"
-                                    alt="Return to Yourself spiritual guide"
                                     class="product-image"
+                                    src="images/WebsiteISeeImage.png"
+                                    alt="I See — Awareness by Shea Melissa"
                                     loading="lazy"
                                 >
                             </div>
 
                             <div class="product-content">
                                 <p class="product-type">
-                                    Digital Spiritual Guide
+                                    Stage 1 · Combined Guide &amp; Workbook
                                 </p>
 
-                                <h3>
-                                    Return to Yourself: The Guide
-                                </h3>
+                                <h2 id="heading-return">
+                                    I See — Awareness
+                                </h2>
 
                                 <p class="product-description">
-                                    A compassionate spiritual guide for
-                                    reconnecting with your truth,
-                                    strengthening your inner voice,
-                                    and reclaiming the personal power
-                                    that has always lived within you.
+                                    Reconnect with your inner voice, recognize
+                                    inherited beliefs, and begin noticing the
+                                    patterns that shape your life.
                                 </p>
 
                                 <ul class="product-features">
-                                    <li>Insight inspired by lived transformation</li>
-                                    <li>Guidance for rebuilding self-trust</li>
-                                    <li>Reflection and empowerment exercises</li>
-                                    <li>Downloadable digital PDF</li>
+                                    <li>Guidance and personal reflection in one volume</li>
+                                    <li>Workbook prompts and Sacred Pauses</li>
+                                    <li>Explore independently or as part of the series</li>
+                                    <li>One downloadable PDF · By Shea Melissa</li>
                                 </ul>
 
                                 <div class="product-purchase">
-                                    <p class="product-price">
-                                        $7.99
+                                    <p class="purchase-format">
+                                        Digital PDF · Guide &amp; workbook included<br>
+                                        No physical book shipped
                                     </p>
-
-                                    <a
-                                        href="https://payhip.com/b/JXATS"
-                                        class="button button-primary product-button"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        Purchase the Guide
-                                    </a>
-                                </div>
-                            </div>
-                        </article>
-
-                        <!-- WORKBOOK -->
-                        <article class="product-card">
-                            <div class="product-image-container">
-                                <img
-                                    src="images/workbook-product.png"
-                                    alt="Return to Yourself workbook"
-                                    class="product-image"
-                                    loading="lazy"
-                                >
-                            </div>
-
-                            <div class="product-content">
-                                <p class="product-type">
-                                    Fillable &amp; Printable Workbook
-                                </p>
-
-                                <h3>
-                                    Return to Yourself: The Workbook
-                                </h3>
-
-                                <p class="product-description">
-                                    A guided space for exploring your
-                                    experiences, identifying limiting
-                                    patterns, reconnecting with your
-                                    intuition, and intentionally choosing
-                                    what comes next.
-                                </p>
-
-                                <ul class="product-features">
-                                    <li>Guided reflection questions</li>
-                                    <li>Fillable digital writing spaces</li>
-                                    <li>Printable journaling pages</li>
-                                    <li>Self-paced exercises and practices</li>
-                                </ul>
-
-                                <div class="product-purchase">
-                                    <p class="product-price">
-                                        $12.99
-                                    </p>
-
-                                    <a
-                                        href="https://payhip.com/b/1yG0b"
-                                        class="button button-primary product-button"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        Purchase the Workbook
-                                    </a>
-                                </div>
-                            </div>
-                        </article>
-
-                        <!-- BUNDLE -->
-                        <article class="product-card featured-product">
-                            <div class="best-value-badge">
-                                Best Value
-                            </div>
-
-                            <div class="product-image-container">
-                                <img
-                                    src="images/bundle-product.png"
-                                    alt="Return to Yourself complete collection"
-                                    class="product-image"
-                                    loading="lazy"
-                                >
-                            </div>
-
-                            <div class="product-content">
-                                <p class="product-type">
-                                    Guide &amp; Workbook Bundle
-                                </p>
-
-                                <h3>
-                                    Return to Yourself: The Complete Journey
-                                </h3>
-
-                                <p class="product-description">
-                                    Read, reflect, write, and transform
-                                    with the Return to Yourself spiritual
-                                    guide and its fillable and printable
-                                    companion workbook.
-                                </p>
-
-                                <ul class="product-features">
-                                    <li>The Return to Yourself spiritual guide</li>
-                                    <li>The fillable and printable workbook</li>
-                                    <li>Two downloadable PDF files</li>
-                                    <li>Save $2.99 when purchased together</li>
-                                </ul>
-
-                                <div class="product-purchase">
-                                    <p class="original-price">
-                                        $20.98
-                                    </p>
-
                                     <p class="product-price">
                                         $17.99
+                                        <span class="currency-label">USD</span>
                                     </p>
 
                                     <a
@@ -494,80 +386,66 @@
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        Purchase the Bundle
+                                        Explore I See on Payhip
                                     </a>
                                 </div>
                             </div>
-                        </article>
 
+                        </article>
                     </div>
                 </section>
 
-                <!-- BECOMING YOURSELF -->
+                <!-- I CHOOSE -->
                 <section
                     class="journey-panel"
                     id="panel-becoming"
                     data-panel="becoming"
+                    aria-labelledby="heading-becoming"
                     hidden
                 >
-                    <div class="section-heading">
-                        <p class="eyebrow">
-                            The awakening
-                        </p>
-
-                        <h2>
-                            Becoming Yourself
-                        </h2>
-
-                        <p class="offerings-introduction">
-                            Returning to yourself opens the door.
-                            Becoming yourself invites you to step through
-                            it—to explore who you are beyond the roles
-                            you have carried and make space for the
-                            woman you are becoming.
-                        </p>
-                    </div>
-
                     <div class="becoming-product-layout">
                         <article class="product-card becoming-product">
 
                             <div class="product-image-container">
                                 <img
-                                    src="images/becoming-yourself-product.png"
-                                    alt="Becoming Yourself guide cover featuring three women"
                                     class="product-image"
+                                    src="images/WebsiteIchooseimage.png"
+                                    alt="I Choose — Discernment by Shea Melissa"
                                     loading="lazy"
                                 >
                             </div>
 
                             <div class="product-content">
                                 <p class="product-type">
-                                    Digital Self-Discovery Guide
+                                    Stage 2 · Combined Guide &amp; Workbook
                                 </p>
 
-                                <h3>
-                                    Becoming Yourself
-                                </h3>
+                                <h2 id="heading-becoming">
+                                    I Choose — Discernment
+                                </h2>
 
                                 <p class="product-description">
-                                    A compassionate exploration of identity,
-                                    inner transformation, and the journey
-                                    toward becoming more fully yourself.
-                                    Make space for your own voice, explore
-                                    the roles you have carried, and reconnect
-                                    with the woman you are becoming.
+                                    Explore identity, autonomy, and conscious
+                                    choice through Becoming Yourself and its
+                                    three-lily framework: Who I Am, I Choose,
+                                    I Become.
                                 </p>
 
                                 <ul class="product-features">
-                                    <li>Explore identity and personal transformation</li>
-                                    <li>Reflect on patterns and expectations</li>
-                                    <li>Reconnect with your inner voice</li>
-                                    <li>Downloadable digital PDF</li>
+                                    <li>Guidance and personal reflection in one volume</li>
+                                    <li>Workbook prompts and Sacred Pauses</li>
+                                    <li>Explore independently or as part of the series</li>
+                                    <li>One downloadable PDF · By Shea Melissa</li>
                                 </ul>
 
                                 <div class="product-purchase">
+                                    <p class="purchase-format">
+                                        Digital PDF · Guide &amp; workbook included<br>
+                                        No physical book shipped
+                                    </p>
                                     <p class="product-price">
-                                        $12.99
+                                        $17.99
+                                        <span class="currency-label">USD</span>
                                     </p>
 
                                     <a
@@ -576,7 +454,7 @@
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        Purchase Becoming Yourself
+                                        Explore I Choose on Payhip
                                     </a>
                                 </div>
                             </div>
@@ -585,79 +463,56 @@
                     </div>
                 </section>
 
-                <!-- EMBODIMENT -->
+                <!-- I EMBODY -->
                 <section
                     class="journey-panel"
                     id="panel-embodiment"
                     data-panel="embodiment"
+                    aria-labelledby="heading-embodiment"
                     hidden
                 >
-                    <div class="section-heading">
-                        <p class="eyebrow">
-                            The choice
-                        </p>
-
-                        <h2>
-                            Embodiment
-                        </h2>
-
-                        <p class="offerings-introduction">
-                            When Knowing Yourself Becomes Choosing Yourself
-                        </p>
-                    </div>
-
                     <div class="becoming-product-layout">
                         <article class="product-card becoming-product">
 
                             <div class="product-image-container">
                                 <img
-                                    src="images/EmbodimentGuide.png"
-                                    alt="Embodiment Guide by Shea Melissa"
                                     class="product-image"
+                                    src="images/WebsiteIembodyimage.png"
+                                    alt="I Embody — Embodiment by Shea Melissa"
                                     loading="lazy"
                                 >
                             </div>
 
                             <div class="product-content">
                                 <p class="product-type">
-                                    Digital Personal Growth Guide
+                                    Stage 3 · Combined Guide &amp; Workbook
                                 </p>
 
-                                <h3>
-                                    Embodiment
-                                </h3>
+                                <h2 id="heading-embodiment">
+                                    I Embody — Embodiment
+                                </h2>
 
                                 <p class="product-description">
-                                    Knowing yourself is only the beginning.
-                                    Embodiment is where self-awareness
-                                    becomes intentional action, where
-                                    boundaries become choices, and where
-                                    personal growth begins to shape the
-                                    life you actually live.
-                                </p>
-
-                                <p class="product-description">
-                                    Through 12 thoughtfully developed
-                                    chapters and guided reflection
-                                    exercises, explore accountability
-                                    without shame, breaking familiar
-                                    patterns, building self-trust, and
-                                    making choices that honor the person
-                                    you are becoming.
+                                    Bring your values into daily practice
+                                    through boundaries, intentional habits,
+                                    and small actions that build self-trust.
                                 </p>
 
                                 <ul class="product-features">
-                                    <li>Explore choice and accountability</li>
-                                    <li>Recognize and break familiar patterns</li>
-                                    <li>Establish boundaries through action</li>
-                                    <li>Build self-trust through intentional choices</li>
-                                    <li>12 chapters with guided reflection exercises</li>
-                                    <li>16-page downloadable digital PDF</li>
+                                    <li>Guidance and personal reflection in one volume</li>
+                                    <li>Workbook prompts and Sacred Pauses</li>
+                                    <li>Explore independently or as part of the series</li>
+                                    <li>One downloadable PDF · By Shea Melissa</li>
                                 </ul>
 
                                 <div class="product-purchase">
+                                    <p class="purchase-format">
+                                        Digital PDF · Guide &amp; workbook included<br>
+                                        No physical book shipped
+                                    </p>
                                     <p class="product-price">
-                                        $12.99
+                                        $17.99
+                                        <span class="currency-label">USD</span>
                                     </p>
 
                                     <a
@@ -666,7 +521,7 @@
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        Purchase Embodiment
+                                        Explore I Embody on Payhip
                                     </a>
                                 </div>
                             </div>
@@ -675,66 +530,144 @@
                     </div>
                 </section>
 
-                <!-- INTEGRATION -->
+                <!-- I INTEGRATE -->
                 <section
                     class="journey-panel"
                     id="panel-integration"
                     data-panel="integration"
+                    aria-labelledby="heading-integration"
                     hidden
                 >
-                    <div class="section-heading">
-                        <p class="eyebrow">
-                            The alignment
-                        </p>
+                    <div class="becoming-product-layout">
+                        <article class="product-card becoming-product">
 
-                        <h2>
-                            Integration
-                        </h2>
+                            <div class="product-image-container">
+                                <img
+                                    class="product-image"
+                                    src="images/websiteiIntegrateimage.png"
+                                    alt="I Integrate — Integration by Shea Melissa"
+                                    loading="lazy"
+                                >
+                            </div>
 
-                        <p class="offerings-introduction">
-                            A future chapter in the Continuum Divinity
-                            journey, exploring how the lessons we learn
-                            become part of the lives we choose to live.
-                        </p>
+                            <div class="product-content">
+                                <p class="product-type">
+                                    Stage 4 · Combined Guide &amp; Workbook
+                                </p>
 
-                        <p class="coming-soon-message">
-                            ✦ Coming Soon ✦
-                        </p>
+                                <h2 id="heading-integration">
+                                    I Integrate — Integration
+                                </h2>
+
+                                <p class="product-description">
+                                    Connect what you notice, choose, and
+                                    practice. Recognize patterns, consider
+                                    your impact, and create new possibilities.
+                                </p>
+
+                                <ul class="product-features">
+                                    <li>Guidance and personal reflection in one volume</li>
+                                    <li>Workbook prompts and Sacred Pauses</li>
+                                    <li>Explore independently or as part of the series</li>
+                                    <li>One downloadable PDF · By Shea Melissa</li>
+                                </ul>
+
+                                <div class="product-purchase">
+                                    <p class="purchase-format">
+                                        Digital PDF · Guide &amp; workbook included<br>
+                                        No physical book shipped
+                                    </p>
+                                    <p class="product-price">
+                                        $17.99
+                                        <span class="currency-label">USD</span>
+                                    </p>
+
+                                    <a
+                                        href="https://payhip.com/b/1yG0b"
+                                        class="button button-primary product-button"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        Explore I Integrate on Payhip
+                                    </a>
+                                </div>
+                            </div>
+
+                        </article>
                     </div>
                 </section>
 
-                <!-- RETURN AGAIN -->
+                <!-- I AM BECOMING -->
                 <section
                     class="journey-panel"
                     id="panel-return-again"
                     data-panel="return-again"
+                    aria-labelledby="heading-return-again"
                     hidden
                 >
-                    <div class="section-heading">
-                        <p class="eyebrow">
-                            The continuation
-                        </p>
+                    <div class="becoming-product-layout">
+                        <article class="product-card becoming-product">
 
-                        <h2>
-                            Return Again
-                        </h2>
+                            <div class="product-image-container">
+                                <img
+                                    class="product-image"
+                                    src="images/websiteIAmBecomingimage.png"
+                                    alt="I Am Becoming — Transformation by Shea Melissa"
+                                    loading="lazy"
+                                >
+                            </div>
 
-                        <p class="offerings-introduction">
-                            Every new chapter brings another opportunity
-                            to reconnect with yourself. Transformation
-                            continues, and each return carries a deeper
-                            understanding of who you have become.
-                        </p>
+                            <div class="product-content">
+                                <p class="product-type">
+                                    Stage 5 · Combined Guide &amp; Workbook
+                                </p>
 
-                        <p class="coming-soon-message">
-                            ✦ Coming Soon ✦
-                        </p>
+                                <h2 id="heading-return-again">
+                                    I Am Becoming — Transformation
+                                </h2>
+
+                                <p class="product-description">
+                                    Explore transformation as an ongoing
+                                    cycle of learning, growth, and discovery.
+                                    Pause, adjust your responses, and choose
+                                    again.
+                                </p>
+
+                                <ul class="product-features">
+                                    <li>Guidance and personal reflection in one volume</li>
+                                    <li>Workbook prompts and Sacred Pauses</li>
+                                    <li>Explore independently or as part of the series</li>
+                                    <li>One downloadable PDF · By Shea Melissa</li>
+                                </ul>
+
+                                <div class="product-purchase">
+                                    <p class="purchase-format">
+                                        Digital PDF · Guide &amp; workbook included<br>
+                                        No physical book shipped
+                                    </p>
+                                    <p class="product-price">
+                                        $17.99
+                                        <span class="currency-label">USD</span>
+                                    </p>
+
+                                    <a
+                                        href="https://payhip.com/b/JXATS"
+                                        class="button button-primary product-button"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        Explore I Am Becoming on Payhip
+                                    </a>
+                                </div>
+                            </div>
+
+                        </article>
                     </div>
                 </section>
 
-            </div><!-- END journey-details -->
+            </div>
 
-            <!-- ==================== JOURNEY NAVIGATION ==================== -->
+            <!-- JOURNEY NAVIGATION -->
             <div class="journey-navigation">
 
                 <button
@@ -763,15 +696,162 @@
 
             </div>
 
+            <!-- COMPLETE COLLECTION -->
+            <section
+                class="collection-section"
+                id="complete-collection"
+                aria-labelledby="collection-heading"
+            >
+
+                <div class="section-heading">
+                    <p class="eyebrow">
+                        All five stages · One collection
+                    </p>
+
+                    <h2 id="collection-heading">
+                        The Complete Return to Yourself Collection
+                    </h2>
+                </div>
+
+                <div class="becoming-product-layout">
+                    <article
+                        class="product-card becoming-product featured-product"
+                    >
+
+                        <div class="product-image-container">
+                            <img
+                                class="product-image"
+                                src="images/websiteCompleteSeriesImage.png"
+                                alt="Return to Yourself complete five-volume collection by Shea Melissa"
+                                loading="lazy"
+                            >
+                        </div>
+
+                        <div class="product-content">
+                            <p class="product-type">
+                                The Complete Collection
+                            </p>
+
+                            <h3>A journey you can return to</h3>
+
+                            <p class="product-description">
+                                Awareness, Discernment, Embodiment,
+                                Integration, and Transformation—together
+                                in one downloadable PDF. Read, pause,
+                                reflect, and explore at your own pace.
+                            </p>
+
+                            <ul class="product-features">
+                                <li>I See — Awareness</li>
+                                <li>I Choose — Discernment · Becoming Yourself</li>
+                                <li>I Embody — Embodiment</li>
+                                <li>I Integrate — Integration</li>
+                                <li>I Am Becoming — Transformation</li>
+                            </ul>
+
+                            <div class="product-purchase">
+                                <p class="purchase-format">
+                                    All five volumes in one digital PDF<br>
+                                    No physical books shipped
+                                </p>
+                                <p class="collection-value">
+                                    Purchased individually: $89.95
+                                </p>
+
+                                <p class="product-price">
+                                    $69.99
+                                    <span class="currency-label">USD</span>
+                                </p>
+
+                                <p class="collection-savings">
+                                    Save $19.96 with the complete collection
+                                </p>
+
+                                <a
+                                    class="button button-primary product-button"
+                                    href="https://payhip.com/b/sRk3P"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Explore the Complete Collection
+                                </a>
+                            </div>
+                        </div>
+
+                    </article>
+                </div>
+
+            </section>
+            
+                        <!-- FREQUENTLY ASKED QUESTIONS -->
+            <section class="faq-section" aria-labelledby="faq-heading">
+
+                <div class="section-heading">
+                    <p class="eyebrow">Before you begin</p>
+                    <h2 id="faq-heading">A little guidance for your journey</h2>
+                </div>
+
+                <details class="faq-item">
+                    <summary>Where should I begin?</summary>
+                    <p>
+                        I See — Awareness offers a natural starting point.
+                        You can also begin with the stage that feels most
+                        relevant to your present experiences and return to
+                        the others when you are ready.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Do I need all five volumes?</summary>
+                    <p>
+                        Each volume can be explored independently. The complete
+                        collection brings all five stages together for readers
+                        who want the wider journey, with room to revisit each
+                        stage as their understanding grows.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>What is included in my purchase?</summary>
+                    <p>
+                        Each individual volume includes its guide and workbook
+                        together in one downloadable PDF. The complete collection
+                        includes all five volumes together in one downloadable
+                        PDF. These are digital products; no physical books
+                        will be mailed.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>How can I use the workbook reflections?</summary>
+                    <p>
+                        Read the PDF on your device and write your responses
+                        in a separate journal, or print the reflection pages
+                        for your personal use. Move at your own pace and
+                        revisit questions whenever you wish.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Is there a schedule to follow?</summary>
+                    <p>
+                        There are no deadlines or required pace. Pause when
+                        you need to, spend longer with a question, and return
+                        when you feel ready.
+                    </p>
+                </details>
+
+            </section>
+
             <p class="digital-product-notice">
-                All available products are digital downloads.
+                All products are digital downloads.
                 No physical products will be mailed.
-                Purchases are securely processed and delivered through Payhip.
+                Purchases are processed and delivered through Payhip.
             </p>
 
-        </section><!-- END offerings -->
+        </section>
 
-        <!-- ==================== ABOUT ==================== -->
+        <!-- ABOUT -->
         <section class="about-section" id="about">
 
             <div class="about-content">
@@ -794,13 +874,11 @@
 
         </section>
 
-        <!-- ==================== CONTACT ==================== -->
+        <!-- CONTACT -->
         <section class="contact-section" id="contact">
 
             <div class="section-heading">
-                <p class="eyebrow">
-                    Stay connected
-                </p>
+                <p class="eyebrow">Stay connected</p>
 
                 <h2>
                     Your return to yourself has already begun.
@@ -814,41 +892,28 @@
 
             <div class="contact-grid">
 
-                <!-- EMAIL -->
                 <a
                     href="mailto:Shea_melissa89@yahoo.com"
                     class="contact-card"
                     aria-label="Email Continuum Divinity"
                 >
-                    <span class="contact-icon">✉</span>
-
-                    <span class="contact-label">
-                        Email
-                    </span>
-
+                    <span class="contact-icon" aria-hidden="true">✉</span>
+                    <span class="contact-label">Email</span>
                     <span class="contact-detail">
                         Shea_melissa89@yahoo.com
                     </span>
                 </a>
 
-                <!-- PHONE -->
                 <a
                     href="tel:+19168806720"
                     class="contact-card"
                     aria-label="Call or text Continuum Divinity"
                 >
-                    <span class="contact-icon">☎</span>
-
-                    <span class="contact-label">
-                        Call or Text
-                    </span>
-
-                    <span class="contact-detail">
-                        (916) 880-6720
-                    </span>
+                    <span class="contact-icon" aria-hidden="true">☎</span>
+                    <span class="contact-label">Call or Text</span>
+                    <span class="contact-detail">(916) 880-6720</span>
                 </a>
 
-                <!-- GITHUB -->
                 <a
                     href="https://github.com/Sheamelissa89"
                     class="contact-card"
@@ -856,14 +921,10 @@
                     rel="noopener noreferrer"
                     aria-label="Visit Shea's GitHub profile"
                 >
-                    <span class="contact-icon">
+                    <span class="contact-icon" aria-hidden="true">
                         &lt;/&gt;
                     </span>
-
-                    <span class="contact-label">
-                        GitHub
-                    </span>
-
+                    <span class="contact-label">GitHub</span>
                     <span class="contact-detail">
                         github.com/Sheamelissa89
                     </span>
@@ -874,18 +935,13 @@
 
     </main>
 
-    <!-- ==================== FOOTER ==================== -->
+    <!-- FOOTER -->
     <footer class="site-footer">
         <p>
-            &copy;
-            <span id="currentYear"></span>
-            Continuum Divinity.
-            All rights reserved.
+            &copy; <span id="currentYear"></span>
+            Continuum Divinity. All rights reserved.
         </p>
     </footer>
-
-    <!-- ==================== JAVASCRIPT ==================== -->
-    <script src="script.js"></script>
 
 </body>
 </html>

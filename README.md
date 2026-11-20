@@ -6,107 +6,71 @@ Continuum Divinity was created from lived experience and the belief that healing
 
 **Visit the website:** [continuumdivinity.com](https://continuumdivinity.com)
 
-## The Journey
+## Return to Yourself
 
-The offerings follow a natural progression: reconnect with yourself, reflect on your experiences, and explore the person you are becoming.
+The five-volume series takes readers from awareness through transformation. Each volume combines a guide and self-paced workbook reflections in one downloadable PDF. *Becoming Yourself* is part of Volume 2, *I Choose*.
 
-### Return to Yourself
+| Volume | Focus | Price (USD) |
+| --- | --- | ---: |
+| 1. [I See](https://payhip.com/b/J2A14) | Awareness | $17.99 |
+| 2. [I Choose](https://payhip.com/b/2jsL1) | Discernment | $17.99 |
+| 3. [I Embody](https://payhip.com/b/2xu9H) | Embodiment | $17.99 |
+| 4. [I Integrate](https://payhip.com/b/1yG0b) | Integration | $17.99 |
+| 5. [I Am Becoming](https://payhip.com/b/JXATS) | Transformation | $17.99 |
+| [Complete Return to Yourself Collection](https://payhip.com/b/sRk3P) | All five volumes in one downloadable PDF | $69.99 |
 
-The Return to Yourself collection brings together a spiritual guide and companion workbook. Each can be purchased individually or together as a bundle.
-
-| Offering | Description | Price |
-| --- | --- | --- |
-| [The Guide](https://payhip.com/b/JXATS) | A compassionate guide for reconnecting with your truth, rebuilding self-trust, and reclaiming your personal power. | $7.99 |
-| [The Workbook](https://payhip.com/b/1yG0b) | A fillable and printable companion with guided reflections, journaling spaces, and self-paced exercises. | $12.99 |
-| [The Complete Journey](https://payhip.com/b/J2A14) | The Return to Yourself guide and workbook together, saving $2.99 compared with purchasing separately. | $17.99 |
-
-### Becoming Yourself
-
-The next step in the journey explores identity, inner transformation, and becoming more fully yourself.
-
-Becoming Yourself invites readers to make space for their own voice, reflect on the roles and expectations they have carried, and reconnect with the woman they are becoming.
-
-The newest guide has its own featured section, with a large cover image and a dedicated purchase link.
-
-**Price:** $12.99  
-**Explore the guide:** [Becoming Yourself on Payhip](https://payhip.com/b/2jsL1)
-
-Becoming Yourself is sold separately from the Return to Yourself collection.
-
-All offerings are digital PDF downloads. Purchases and file delivery are handled through Payhip. No physical products are mailed.
+The five volumes total $89.95 when purchased individually. The complete collection saves $19.96. The current offerings are digital downloads.
 
 ## Website Features
 
-- Purple-and-gold visual design.
-- Responsive layouts for desktop, tablet, and mobile.
-- Fixed navigation with a mobile menu.
-- Three coordinated cards for the Return to Yourself collection.
-- A separate featured section for Becoming Yourself.
-- Direct links to each Payhip product.
-- Email, phone, and GitHub contact links.
-- Keyboard focus indicators and reduced-motion support.
+- Responsive purple-and-gold design for desktop, tablet, and mobile, with fixed navigation and a mobile menu.
+- Interactive journey wheel that switches between five product panels. Previous and Next wrap through the series, and Return to Wheel scrolls back to the selector.
+- Pause and resume controls for the wheel animation, system reduced-motion support, and visible keyboard focus indicators.
+- [Collection previews](https://continuumdivinity.com/previews.html) with five embedded sample PDFs, direct links to open each full sample, and links to the corresponding Payhip listings.
+- Expandable FAQs, a [founder page](https://continuumdivinity.com/about.html), an [information and policies page](https://continuumdivinity.com/policies.html), and email, phone, and GitHub contact links.
 
-## Technologies
+## Architecture and Checkout
 
-- **HTML5** — page structure and content.
-- **CSS3** — styling, responsive layouts, and visual effects.
-- **JavaScript** — navigation and footer interactions.
-- **Google Fonts** — Cormorant Garamond and Montserrat.
-- **Payhip** — digital product checkout and delivery.
+The storefront is a static, multi-page site built with HTML5, CSS3, and vanilla JavaScript. The pages share `style.css` and `script.js`. CSS handles layout, responsive styles, and animation. JavaScript controls mobile navigation, product selection, rotation, and the footer year. Cormorant Garamond and Montserrat are loaded from Google Fonts.
 
-This is a static website and does not require a backend framework or database.
+Purchase links send visitors to the corresponding Payhip product page. Payhip hosts checkout, processes payments, and provides access to the purchased PDF. The storefront requires no backend, database, payment credentials, or build step.
 
 ## Project Files
 
-| File or Folder | Purpose |
+| File or folder | Purpose |
 | --- | --- |
-| `index.html` | Main page, product information, and purchase links. |
-| `style.css` | Website styling and responsive layouts. |
-| `script.js` | Website interactions. |
-| `images/` | Product covers and visual assets. |
-| `CNAME` | Custom domain configuration. |
-| `LICENSE` | Repository license information. |
+| `index.html` | Homepage, journey wheel, volume details, complete collection, FAQ, and contact links. |
+| `about.html` | Founder story, mission, and series overview. |
+| `previews.html` | Volume summaries, sample PDF embeds, and purchase links. |
+| `policies.html` | Digital products, checkout and delivery, and order support. |
+| `style.css` | Shared styling, responsive layouts, and animation. |
+| `script.js` | Shared site interactions. |
+| `images/` | Product covers and other visual assets. |
+| `previews/` | Five public sample PDFs. |
+| `CNAME` | GitHub Pages custom domain configuration. |
+| `LICENSE` | Repository license terms. |
 | `README.md` | Project overview and setup instructions. |
-
-### Product Images
-
-The current storefront uses these image files:
-
-- `images/Guide-product.png`
-- `images/workbook-product.png`
-- `images/bundle-product.png`
-- `images/becoming-yourself-product.png`
-
-Image filenames and capitalization must match their references in `index.html`.
 
 ## Local Preview
 
-With Python installed, open a terminal in the project folder and run:
+Clone the repository and start a local server from the project root using Python 3.
 
 ```bash
+git clone https://github.com/Sheamelissa89/ContinuumDivinity.git
+cd ContinuumDivinity
 python -m http.server 8000
 ```
 
-Open [http://localhost:8000](http://localhost:8000) in your browser.
+Open [http://localhost:8000](http://localhost:8000) in a browser. Use `python3` if that is the Python 3 command on your system. Press **Ctrl+C** to stop the server. Google Fonts and Payhip require internet access.
 
-Press **Ctrl + C** in the terminal to stop the preview server.
+## Deployment and Maintenance
 
-## Updating the Website
+GitHub Pages serves the static site at [continuumdivinity.com](https://continuumdivinity.com). The root `CNAME` file records the custom domain.
 
-1. Edit the content and purchase links in `index.html`.
-2. Update the layout or styling in `style.css`.
-3. Place new product images in the `images` folder.
-4. Preview the website locally.
-5. Check the layout on desktop and mobile.
-6. Confirm that product images load and purchase buttons open the correct listings.
-7. Update this README when adding offerings or changing project details.
-8. Commit and push the changes to GitHub.
-
-## Future Growth
-
-Continuum Divinity will continue to grow with additional guides, workbooks, and reflective resources.
-
-Becoming Yourself currently serves as the featured release. Its presentation can evolve as new offerings are added.
+1. Update prices, product descriptions, and Payhip links in both `index.html` and `previews.html` as applicable, and keep this README in sync.
+2. Put cover images in `images/` and public sample PDFs in `previews/`. Match filename capitalization in the HTML references.
+3. Preview locally on desktop and mobile. Check navigation, the journey wheel, PDF previews, and the Payhip listing links.
+4. Commit and push the changes to the GitHub Pages publishing branch. Verify the live site after Pages publishes.
 
 ## Creator
 
